@@ -1,0 +1,1 @@
+import loading from "./../../component/Loading";
