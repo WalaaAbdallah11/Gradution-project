@@ -43,12 +43,16 @@ function Home  ()  {
   return (
     <>
       <Header />
-      <section className="chosse us">
-        <h2 className="text-center "
-          style={{ color: "#6F9A61", fontSize: "55px", paddingTop: '50px' }}>
+      <section className="chosse us" style={{marginTop:'45px'}}>
+        <div className="heading">
+        <h1 className="text-center "
+          style={{ color: "#6F9A61", fontSize: "60px", paddingTop: '50px',fontWeight:"bold" }}>
           Why Choose Us
-        </h2>
+        </h1>
+        <p className="text-center " style={{fontSize:'21px',marginBottom:'35px'}}>"Why choose our AgriGuide over others? Here are some of the features and services that the AgriGuide offers"
+        </p></div>
         <div className="container" >
+
           <div className="row">
             <div className="col-md-6">
               <img src={chooseus} alt="chosse us"style={{maxWidth:'100%'}} />
@@ -70,9 +74,11 @@ function Home  ()  {
 
       </section>
       <section className="ourBlog" >
-         <h2 className="head" style={{color:'#6F9A61', fontSize:'50px',paddingTop:'30px',display:'flex',justifyContent:'center'}}>Our Blogs</h2>
-
-         <div className="blog-container" style={{marginTop:'65px',width:'75%',display:'flex',marginLeft:'184px'}}>
+        <div  className="heading">
+         <h1 className="head" style={{color:'#6F9A61', fontSize:'70px',paddingTop:'80px',display:'flex',justifyContent:'center'}}>Our Blogs</h1>
+         <p>"Some blogs teach you more about farming include information on soil conditions, watering frequency, and other factors"</p>
+         </div>
+         <div className="container" >
           <div className="row">
             {blogs.map((blog)=>{
               return(
@@ -117,3 +123,5 @@ export default Home;
        
 
     //  </div>
+
+    // style={{marginTop:'65px',width:'75%',display:'flex',marginLeft:'184px'}}

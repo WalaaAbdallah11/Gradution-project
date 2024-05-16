@@ -4,8 +4,9 @@ header {
     max-width: 100%;
     text-align: left;
     background-size: cover;
-    height: 640px;
+    height: 600px;
     overflow: hidden;
+    /* position: absolute; */
 }
 
 header h3 {

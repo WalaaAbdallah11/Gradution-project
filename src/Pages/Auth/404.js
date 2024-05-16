@@ -19,8 +19,12 @@ export default function Err404({role}){
                   </h3>
       
                   <p>the page you are looking for not avaible!</p>
-      
-                  <Link to={"/"} className="link_404 ">Go to Home</Link>
+                  <p>the page you are looking for not avaible!</p>
+      <div className="d-block">
+      <Link to={"/"} className="link_404 ">Go to Home</Link>
+                  <Link to={"/membership"} className="link_404 ">Go to Pricing Page </Link>
+      </div>
+                  
                 </div>
               </div>
             </div>

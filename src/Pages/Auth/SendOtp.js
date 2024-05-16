@@ -1,14 +1,8 @@
-import React, {useContext, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-// import Loading from '../../Components/Loading';
-import loading from "./../../component/Loading";
-import { Email } from '../Context/EmailContext';
+import Loading from '../../component/Loading';
 import { useNavigate } from 'react-router-dom';
-// import { SENDOTP, baseURL } from './../../Api/Api';
-// import { useNavigate } from 'react-router-dom';
-// import  Cookie  from 'cookie-universal';
-// import NavBar from '../../Components/NavBar';
-import Navs from './../../component/Home.js/Navs/Navs';
+import Navs from '../../component/Home.js/Navs/Navs';
 
 const SendOtp = () => {
     const [form, setForm] = useState({
@@ -17,8 +11,8 @@ const SendOtp = () => {
      // Cookie
     //  const cookie = Cookie();
 
-    const emailShow = useContext(Email);
-    console.log(emailShow);
+    // const emailShow = useContext(Email);
+    // console.log(emailShow);
 
     //loading
     const [loading, setLoading] = useState(false);
@@ -46,10 +40,10 @@ const SendOtp = () => {
                 // const token = res.data.token;
                 // cookie.set("e-commerce", token);
                 const userEmail = res.config.data;
-                // const token = res.config.token;
+                localStorage.setItem('email', userEmail);
                 // console.log(token);
                 console.log(userEmail);
-                emailShow.setEmailAuth({userEmail});
+                // emailShow.setEmailAuth({userEmail});
                 nav("/resetpassword");
             } else {
                 console.error('Failed to send OTP');

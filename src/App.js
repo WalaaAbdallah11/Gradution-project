@@ -10,16 +10,47 @@ import VerifyOtp from './Pages/Auth/VerifyOtp';
 import ResetPassword from './Pages/Auth/ResetPassword';
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import RequireAuth from "./Pages/Auth/RequireAuth";
-import Err404 from "./Pages/Auth/404";
+// import Err404 from "./Pages/Auth/404";
+// new
+import PlantDetalis from './Pages/Website/PlantDetalis';
+import Consultation from './Pages/Website/Consultation';
+import SUitablePlant from './Pages/Website/SuitablePlant';
+import PlantDetection from './Pages/Website/PlantDetection';
+import PlantDiseases from './Pages/Website/PlantDiseases';
+// 
 import RequireBack from "./Pages/Auth/RequireBack";
 import Posts from "./Pages/Dashboard/Posts";
 import AddPost from "./Pages/Dashboard/AddPost";
 import Post from "./Pages/Dashboard/Post";
-import Test from "./Pages/Website/Test";
-import { DISEASE, PLANT } from "./Api/Api";
+// import Test from "./Pages/Website/Test";
+
+import {AllSUITABLEPLANTS, DISEASE, DISEASES, PLANT } from "./Api/Api";
 import ResetSuccess from "./Pages/Auth/ResetSuccess";
-import Consultation from './Pages/Website/Consultation';
+import VerifySuccess from "./Pages/Auth/VerifySuccess";
+
 import Contact from './Pages/Website/Contact';
+import Profile from "./Pages/Website/Profile/Profile";
+import Sensor from "./Pages/Website/Sensor";
+
+import Chat from "./Pages/Website/Chat/Chat";
+import ForgetPassVerify from "./Pages/Auth/FogetPassVerify";
+import Hiring from "./Pages/Website/Hiring";
+import ThanksApplying from "./Pages/Website/ThanksApplying";
+import EditProfile from "./Pages/Website/Profile/EditProfile";
+import Conversation from "./Pages/Website/Chat/Conversition";
+import MemberShip from "./Pages/Website/MemberShip";
+import BuyingMembership from "./Pages/Website/Buying_Membership";
+import Err403 from "./Pages/Auth/403";
+import ConsultationProfile from "./Pages/Website/ConsultationProfile";
+import AllChats from "./Pages/Website/Chat/AllChats";
+import RequireAuthMember from "./Pages/Auth/RequireAuth copy";
+import AddQuestions from "./Pages/Website/Profile/AddQuestions";
+import CardQuestion from "./component/CardQuestion";
+
+
+
+
+
 import SoilType from './component/Service/SoilType/SoilType';
 import SoilTypeDetails from './component/Service/SoilType/SoilTypeDetails';
 // **********************
@@ -55,7 +86,8 @@ const routes = createBrowserRouter(createRoutesFromElements(
     <Route path='contact' element={<Contact/>}/>
     <Route path='GrowingTips' element={<GrowingTips/>} />
     <Route path='GrowingTips/:GrowingTipsId' element={<GrowingTipsDetails/>} />
-    <Route path='/consultation' element={<Consultation/>}/>
+    {/* <Route path='/consultation' element={<Consultation/>}/> */}
+    <Route path='/sensor' element={<Sensor/>}/>
     <Route path='/soilType' element={<SoilType/>}/>
     <Route path='/soilType/:soilTypeId' element={<SoilTypeDetails/>} />
     
@@ -64,13 +96,39 @@ const routes = createBrowserRouter(createRoutesFromElements(
      <Route element={<RequireBack></RequireBack>}>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/test" element={<Test />}></Route>
+          {/* <Route path="/test" element={<Test />}></Route> */}
         </Route>
-        <Route path="/*" element={<Err404></Err404>}></Route>
+        <Route path="/*" element={<Err403></Err403>}></Route>
         <Route path='/sendotp' element={<SendOtp />}></Route>
           <Route path='/verifyotp' element={<VerifyOtp />}></Route>
           <Route path='/resetpassword' element={<ResetPassword />}></Route>
           <Route path='/resetsuccess' element={<ResetSuccess />}></Route>
+          <Route path='/suitableplant' element={<SUitablePlant></SUitablePlant>}></Route>
+          <Route path='/plantdetection' element={<PlantDetection></PlantDetection>}></Route>
+          <Route path="/profile" element={<Profile></Profile>}> </Route>
+         {/* <Route path="/addquestion" element={<AddQuestion></AddQuestion>}></Route> */}
+          <Route path="/editprofile" element={<EditProfile></EditProfile>}></Route>
+          <Route path="/hiring" element={<Hiring></Hiring>}></Route>
+          <Route path="/thanksapplying" element={<ThanksApplying></ThanksApplying>}></Route>
+          <Route path="/membership" element={<MemberShip></MemberShip>}></Route>
+          <Route path="/membership/:membershipId" element={<BuyingMembership></BuyingMembership>}></Route>
+          <Route path="/chat" element={<Chat></Chat>}></Route>
+          <Route path="/allchats" element={<AllChats></AllChats>}></Route>
+          <Route path="/allchats/:convID" element={<Conversation></Conversation>}></Route>
+
+          <Route path={`${AllSUITABLEPLANTS}/${PLANT}/:plantId`} element={<PlantDetalis></PlantDetalis>}></Route>
+          <Route path={`${DISEASES}/${DISEASE}/:diseaseId`} element={<PlantDiseases></PlantDiseases>}></Route>
+
+          <Route  element={ <RequireAuthMember allowedMemberShip={["3","2","1"]}></RequireAuthMember>}>
+          <Route path='/consultation' element={<Consultation></Consultation>}></Route>
+          <Route path='/consultation/:consID' element={<ConsultationProfile></ConsultationProfile>}></Route>
+         </Route>
+
+         <Route  element={ <RequireAuthMember allowedMemberShip={["3","2","1"]}></RequireAuthMember>}>
+          <Route path='/addquestions' element={<AddQuestions></AddQuestions>}></Route>
+          <Route path='/cardquestion' element={<CardQuestion></CardQuestion>}></Route>
+         </Route>
+
           <Route
           element={
             <RequireAuth allowedRole={[1]}></RequireAuth>
@@ -82,11 +140,11 @@ const routes = createBrowserRouter(createRoutesFromElements(
                 element={<Posts></Posts>}
               ></Route>
               <Route
-                path="posts/:id"
+                path="posts/edit/:id"
                 element={<Post></Post>}
               ></Route>
               <Route
-                path="create_post"
+                path="posts/create_post"
                 element={<AddPost></AddPost>}
               ></Route>
             </Route>

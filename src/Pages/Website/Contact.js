@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-// import NavBar from './../../Components/NavBar';
 import Navs from "../../component/Home.js/Navs/Navs";
+import contact from '../../assets/contact.jpg'
 
 // npm i @emailjs/browser
 
@@ -32,17 +32,16 @@ const Contact = () => {
     return (
         <>
         {/* <NavBar></NavBar> */}
-       
         <div class="contact" id="Contact">
             <div class="container">
                 <div className="col-6 headerContact" >
-                    <h2 className="plantDetDes">Contact US</h2>
+                    <h2 className="main-title plantDetDes headerCon">Contact US</h2>
                     <p className="contact-titlep">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt. </p>
                 </div>
                 <div class="content">
 
-                    <div class="info">
-                        {/* <img src="../../assests/background.png" alt="img"></img> */}
+                    <div class="infoContact">
+                        <img src={contact} alt="img" style={{width:"500px" , height:"600px"}}></img>
                     </div>
 
                     <form ref={form} onSubmit={sendEmail} >
@@ -64,7 +63,7 @@ const Contact = () => {
                         <label>Message</label>
                         <textarea className="main-input"
                             name="message" placeholder="Subject....." />
-                        <input type="submit" value="Send" />
+                        <input type="submit" value="Send" className="btn-contact register-navBar"/>
                     </form>
 
                 </div>

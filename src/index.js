@@ -4,8 +4,11 @@ import './index.css';
 // ward
 import "./Css/Loading.css";
 import "./Css/button.css";
+import "./Css/card.css";
 import "./Css/alerts.css";
 import "./Css/sign.css";
+import "./all.min.css";
+import "./Css/profile.css";
 // ******************
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -14,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import { BrowserRouter as Router } from 'react-router-dom';
 import MenuContext from './Context/MenuContext';
 import WindowContext from './Context/WindowContext';
-import EmailProvider from './Pages/Context/EmailContext';
+// import EmailProvider from './Pages/Context/EmailContext';
 // ******************
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,11 +30,11 @@ root.render(
   <React.StrictMode>
     <WindowContext>
     <MenuContext>
-    <EmailProvider>
+    {/* <EmailProvider> */}
     {/* <Router> */}
     < App />
     {/* </Router> */}
-    </EmailProvider>
+    {/* </EmailProvider> */}
     </MenuContext>
     </WindowContext> 
   </React.StrictMode>

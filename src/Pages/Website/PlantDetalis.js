@@ -1,8 +1,11 @@
 // import {data} from "../../data";
-import CardDiseases from "../../Components/CardDiseases";
+import CardDiseases from "../../component/CardDiseases";
+// import CardDiseases from "../../Components/CardDiseases";
 import { useEffect, useState } from "react";
-import { PLANTDETALI, baseURL2 } from "../../Api/Api";
-import { Link, useParams } from "react-router-dom";
+import { AllSUITABLEPLANTS, PLANT, PLANTDETALI, baseURL, baseURL2 } from "../../Api/Api";
+import { useParams } from "react-router-dom";
+import Navs from "../../component/Home.js/Navs/Navs";
+import { Axios } from "../../Api/axios";
 // import CardSuitableP from "../../Components/CardSuitableP";
 
 export default function PlantDetalis() {
@@ -15,9 +18,13 @@ export default function PlantDetalis() {
 
     //show item through id
     useEffect(() => {
-        fetch(`${baseURL2}/${PLANTDETALI}/${params.plantId}`)
-            .then((res) => res.json())
-            .then((plant) => setPlant(plant));
+        Axios.get(`${baseURL}/${AllSUITABLEPLANTS}/${PLANT}/${params.plantId}`)
+            .then((plant) => {
+                setPlant(plant.data.crop)
+                // console.log(plant.data.crop.diseases)/
+                setpalntDiseases(plant.data.crop.diseases)
+            
+            });
     }, []);
     
     //disease related to plant
@@ -29,15 +36,21 @@ export default function PlantDetalis() {
 
     return (
         <>
-            <h1 className="plantDetDes">Plant Detalis </h1>
+        {/* <NavBar></NavBar> */}
+            <h1 className="plantDetDes">Plant Details</h1>
             <div className=' d-flex align-content-center'>
                     <img src={plant.image}  alt="img" className="imgplantdetial col-4"/> 
                     <div className="contentplant col-4">
                         <h3 className="limitnumberh">
-                            {plant.title}
+                            {plant.name}
                         </h3>
-                        <p className="limitnumber">{plant.description}</p>
-                        <Link to={`/product/${plant.id}`} showButton={true} className="btn-detail">Read More</Link>  
+
+                        <p className="limitnumber"><span className="fw-bold m-1">Fertilizers :</span>{plant.Fertilizers}</p>
+                        <p className="limitnumber"><span className="fw-bold m-1">Irrigation Method</span>{plant["Irrigation Method"]}</p>
+                        <p className="limitnumber"><span className="fw-bold m-1">Planting Method</span>{plant["Planting Method"]}</p>
+                        <p className="limitnumber"><span className="fw-bold m-1">Planting Tips</span>{plant["Planting Tips"]}</p>
+                        <p className="limitnumber"><span className="fw-bold m-1">Recommended Time</span>{plant["Recommended Time"]}</p>
+                        {/* <Link to={`/product/${plant.id}`} showButton={true} className="btn-detail">Read More</Link>   */}
                     </div> 
                     
                 </div>

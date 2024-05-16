@@ -18,8 +18,9 @@
 }
 
 .navbar img {
-    width: auto;
-    height: 50px !important;
+    width: 70px;
+    /* width: auto; */
+    height: 55px !important;
     /* margin: 3px 50px 3px 15px; */
 }
 
@@ -105,4 +106,68 @@
        
     }
 }
+.btn-dashboard{
+    outline: none !important  ;
+    border: none !important;
+    padding: 5px 20px !important;
+    color: white !important;
+    cursor: pointer !important;
+    transition: 0.3s !important;
+    font-weight: bold !important;
+    border-radius: 32px !important;
+    background-color: var( --main-color) !important;
+    margin-top: 15px !important;
+    text-decoration: none !important;
+    height: 40px !important;
+  
+    width: 150px !important;
+  }
+   .btn-dashboard:hover{
+    background-color: white;
+    border: 1px solid var( --main-color);
+    color: #6F9A61;}
+
+
+
+    /* ward00 */
+    .register{
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        margin-top: 40px;
+    }
+    .register button , .register-navBar {
+        outline: none;
+        border: none;
+        padding: 10px 20px;
+        color: white !important;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+        border-radius: 32px;
+        background-color: #6F9A61;
+        margin-top: 10px;
+        text-decoration: none;
+    }
+    .register-navBar {
+        border: 1px solid transparent;
+        padding: 5px 5px;
+    }
+    .register button:hover , .register-navBar:hover{
+        background-color: white;
+        border: 1px solid #6F9A61;
+        color: #6F9A61 !important;
+    }
+    .login{
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        height:80vh;
+    }
+
+    /* wwal */
+    .mt{
+        position: relative;
+        z-index: 2;
+    }
  

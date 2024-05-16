@@ -1,13 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { LOGIN, baseURL } from "../../Api/Api";
-
-// import Loading from "../../Components/Loading";
-// import loading from "./../../component/Loading";
-import loading from "./../../component/Loading";
+import Loading from '../../component/Loading';
 import Cookie from 'cookie-universal';
+import Navs from '../../component/Home.js/Navs/Navs';
 // import NavBar from './../../Components/NavBar';
-import Navs from './../../component/Home.js/Navs/Navs';
 import { Link } from "react-router-dom";
 
 export default function Login() {
@@ -56,11 +53,7 @@ export default function Login() {
 
     return (
         <>
-            {/* ward */}
             {/* <NavBar></NavBar> */}
-            {/* <Navs></Navs> */}
-            {/* <Loading */}
-
             {loading && <Loading></Loading>}
             <div className="parent">
                 <div className="register login">

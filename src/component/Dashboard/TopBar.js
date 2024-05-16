@@ -11,15 +11,15 @@ export default function TopBar(){
 
 
     return (
-        <div className="top-bar shadow mb-3">
+        <div className="top-bar dash-top">
             <div className=" d-flex align-items-center justify-content-between ">
-            <div className="d-flex align-items-center gap-5 p-3 ">
-            <h3 className="mr-5">Dashboard</h3>
+            <div className="d-flex align-items-center justify-content-between gap-5 p-3 ">
+            <h3 >Dashboard</h3>
             <FontAwesomeIcon 
             onClick={() => setIsOpen((prev) => !prev)}
             cursor={"pointer"} icon={faBars} />
             </div>
-            <Link to="/" className="btngo"> Go TO Website</Link>
+            <Link to="/" className="btngo">  Website</Link>
 
         </div>
 

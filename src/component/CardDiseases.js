@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../Css/card.css";
+import { DISEASE, DISEASES } from "../Api/Api";
 
 export default function CardDiseases(props) {
     const { plantdisease ,showButton  } = props;
@@ -8,13 +9,13 @@ export default function CardDiseases(props) {
                     <img src={plantdisease.image}  alt="img"/> 
                     <div className="content">
                         <h3 className="limitnumberh">
-                            {plantdisease.title}
+                            {plantdisease.name}
                         </h3>
                         <p className="limitnumber">{plantdisease.description}</p>
                     </div>
-                    {showButton && <div className="info">
+                    {showButton && <div className="infoPlant">
 
-                        <Link to={`/user/${plantdisease.id}`}>Read More</Link>  
+                        <Link to={`/${DISEASES}/${DISEASE}/${plantdisease.id}`}>Read More</Link>  
                         <i className="fas fa-long-arrow-alt-right"></i>
                     </div> } 
                 </div>

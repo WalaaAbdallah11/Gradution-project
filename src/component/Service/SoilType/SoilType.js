@@ -13,6 +13,7 @@ import axios from "axios";
 import { baseURL2 } from "../../../Api/Api";
 import soilType from './../../../assets/plant-leaf 1 (1).png';
 import SoilTypeDetails from "./SoilTypeDetails";
+import SoilCrop from "./SoilCrop";
 
 // import { useParams } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function SoilType() {
    
     const [Soil, setSoil] = useState([]);
     const [search, setSearch] = useState("")
+    const[Crop, SetCrop] = useState([]);
    
    
     
@@ -50,16 +52,10 @@ function SoilType() {
 
      <div className="container">
      <h2 className="text-center" style={{ color: "#6F9A61", fontSize: "55px", paddingTop: '30px' }}>Soil Type</h2>
-            <p className="text-center " style={{ fontSize: "15px" ,marginBottom:'55px'}}>Include Information on soil conditions, watering frequency, and other factors</p>
+            <p className="text-center " style={{ fontSize: "15px" ,marginBottom:'55px'}}>detect The type of the soil , Know information about every soil and Know the best plant rely on the type soil</p>
        
         <div className="row">
-          {/* {Soil.map((soil) => {
-            return (
-              <div className="col-md-4  " key={soil.id} style={{ marginTop: '20px' }}>
-                <SoilTypeList soil={soil} />
-              </div>
-            );
-          })} */}
+         
 
           {Soil &&
            Soil.filter(soil => {
@@ -85,3 +81,10 @@ function SoilType() {
   export default SoilType;
 
     
+ {/* {Soil.map((soil) => {
+            return (
+              <div className="col-md-4  " key={soil.id} style={{ marginTop: '20px' }}>
+                <SoilTypeList soil={soil} />
+              </div>
+            );
+          })} */}

@@ -1,0 +1,65 @@
+.img-profile{
+    margin-top: 15px;
+    height: 40vh;
+    width: 100%;
+}
+.avatar{
+    /* background-image: url(../assests/avatar.jpg); */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 100px;
+    margin-top: -60px;
+}
+.infoprofile{
+    margin-left: 140px;
+    margin-top: 20px;
+}
+.btnfollow{
+    outline: none;
+    border: none;
+    padding: 7px 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: fit-content !important;
+    border-radius: 10px;
+    background-color: var( --main-color);
+    margin-top: 20px;
+    text-decoration: none;
+    margin-right: 70px;
+}
+.btnfollow:hover{
+   
+    color: var( --main-color);
+    border: 1px solid  var(--main-color);
+}
+
+.btn-newpost{
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var( --main-color);
+    margin-top: 20px;
+    margin-right: 25px;
+    padding:  5px 10px;
+    border-radius: 10px;
+
+}
+
+.input-post{
+    border: none !important;
+
+}
+.post-card{
+    margin-left: 250px;
+    width: 800px !important;
+}
+/* popup */
+/* popup */
+/* Add Question page */
+
+
+/* Add Question page */

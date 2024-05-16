@@ -19,8 +19,8 @@ const Service = () => {
     // const{service} = props;
     return (
         <>
-            <h2 className="text-center p-3" style={{ color: "#6F9A61", fontSize: "55px" }}> Our Service</h2>
-            <div className="container " >
+            {/* <h2 className="text-center p-3" style={{ color: "#6F9A61", fontSize: "55px" }}> Our Service</h2> */}
+            <div className="container " style={{marginTop:'100px'}} >
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card" >
@@ -44,9 +44,9 @@ const Service = () => {
                                 <h4 className="header">suitable Plant </h4>
                                 <p className="text" >The best plant rely on soil type</p>
                                 <div className='growbm' >
-                                    <Link to="/home" > Try It </Link>
+                                    <Link to="/suitableplant" > Try It </Link>
                                     <h2 >
-                                        <Link to='/GrowingTips'  >  <EastIcon /> </Link>
+                                        <Link to='/suitableplant'  >  <EastIcon /> </Link>
                                     </h2>
                                 </div>
                             </div>
@@ -59,18 +59,18 @@ const Service = () => {
                                 <h4 className="header" > Smart Sensor </h4>                                                                
                                 <p className="text" >measure the amount af water</p>
                                 <div className='growbm' >
-                                    <Link to="/home" > Try It  </Link>
+                                    <Link to="/sensor" > Try It  </Link>
                                     <h2>
-                                        <Link to='/GrowingTips'  >  <EastIcon />  </Link>                         
+                                        <Link to='/sensor'  >  <EastIcon />  </Link>                         
                                     </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
 
-            <div className="container">
+            {/* <div className="container"> */}
                 <div className="row">
                     <div className="col-4">
                         <div className="card">
@@ -79,9 +79,9 @@ const Service = () => {
                                 <h4 className="header" >  Disease Detection  </h4>                                                                
                                 <p className="text" >detect Pests and diseases that can hurt the plant</p>
                                 <div className='growbm' >
-                                    <Link to="/home" >    Try It  </Link>
+                                    <Link to="/plantdetection" >    Try It  </Link>
                                     <h2 >
-                                        <Link to='/GrowingTips' >   <EastIcon />    </Link>
+                                        <Link to='/plantdetection' >   <EastIcon />    </Link>
                                     </h2>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@ const Service = () => {
                                 <div className='growbm' >
                                     <Link to="/consultation" >  Try It  </Link>
                                     <h2 >
-                                        <Link to='/GrowingTips'  >  <EastIcon /> </Link>         
+                                        <Link to="/consultation"  >  <EastIcon /> </Link>         
                                     </h2>
                                 </div>
                             </div>

@@ -1,8 +1,7 @@
 
 /* Global css */
 .shadow{
-    box-shadow: 1px  1px 10px 1px  #cbc9c9;
-
+    box-shadow: 0 0 0 0px rgba(0,0,0,0.1);
 }
 :root {
     --main-color:#6F9A61;
@@ -17,13 +16,13 @@
     align-items:center;
     justify-content:center;
     margin-top: 5px;
-    height: 88.8vh; 
-    background-image: url(./../assets/background.png);
+    height: 89.4vh; 
+    background-image: url(../assets/background.png);
     /* background-image: url(../assests/background.png); */
     background-repeat: no-repeat;
     background-size: cover;
 }
-form{
+.form{
     width: 400px;
     padding: 20px;
     background-color: white;
@@ -43,9 +42,11 @@ input {
 label{
     margin-bottom: 5px;
 }
-input:focus{
+
+input:focus {
     border: 1px solid #6F9A61;
 }
+
 input::placeholder{
     color: rgba(0,0,0,0.3);
 }
@@ -55,36 +56,27 @@ input::placeholder{
     justify-content:center;
     margin-top: 40px;
 }
-.register button , .register-nav {
+.register button , .register-navBar {
     outline: none;
     border: none;
     padding: 10px 20px;
-    color: white;
+    color: white !important;
     cursor: pointer;
     transition: 0.3s;
     font-weight: bold;
     border-radius: 32px;
-    background-color: var( --main-color);
+    background-color: #6F9A61;
     margin-top: 10px;
     text-decoration: none;
 }
-.register-nav {
-    margin-top: 10px;
-    margin-left: 5px;
-    outline: none;
+.register-navBar {
     border: 1px solid transparent;
-    background-color: var( --main-color);
-    padding: 5px 10px;
-    width: fit-content;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    border-radius: 32px;
+    padding: 5px 5px;
 }
-.register button:hover , .register-nav:hover{
+.register button:hover , .register-navBar:hover{
     background-color: white;
-    border: 1px solid var( --main-color);
-    color: #6F9A61;
+    border: 1px solid #6F9A61;
+    color: #6F9A61 !important;
 }
 .error{
     color: red;
@@ -102,4 +94,30 @@ input::placeholder{
     align-items: center;
     justify-content:center;
     height:80vh;
+}
+/* Chat */
+.chatbutton{
+    z-index: 1;
+    margin-top:3px;
+     margin-left:-95px;
+      border-radius:10px; 
+      color:white;
+      width: 90px;
+}
+.chatbutton:hover{
+ background-color: white;
+    border: 1px solid #6F9A61;
+    color: #6F9A61;
+}
+.chat-A{
+    text-decoration: none;
+}
+.chat-name{
+    color: black;
+}
+
+/* Hiring */
+.inputdash:focus {
+    border: 1px solid #6F9A61 !important;
+    outline: none !important;
 }

@@ -4,6 +4,7 @@ import Cookie from "cookie-universal";
 
 const cookie =  Cookie();
 const token = cookie.get("e-commerce");
+// console.log(token);
 
 
 export const Axios = axios.create({

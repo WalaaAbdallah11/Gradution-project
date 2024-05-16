@@ -1,8 +1,9 @@
 // import {data} from "../../data";
-import CardSuitableP from "../../Components/CardSuitableP";
+import CardSuitableP from "../../component/CardSuitableP";
 import { useEffect, useState } from "react";
-import { AllSUITABLEPLANTS, CATOGRIES, baseURL2 } from "../../Api/Api";
-import NavBar from "../../Components/NavBar";
+import { AllSUITABLEPLANTS, CATOGRIES, baseURL, baseURL2 } from "../../Api/Api";
+import Navs from "../../component/Home.js/Navs/Navs";
+import { Axios } from "../../Api/axios";
 
 export default function PlantDetalis() {
     const [suitablePlants, setsuitablePlants] = useState([]);
@@ -11,23 +12,23 @@ export default function PlantDetalis() {
 
 
     const getPlants = () => {
-        fetch(`${baseURL2}/${AllSUITABLEPLANTS}`)
-            .then((res) => res.json())
-            .then((data) => setsuitablePlants(data));
+        Axios.get(`${baseURL}/${AllSUITABLEPLANTS}`)
+            .then((data) => {setsuitablePlants(data.data.crops.data)
+                console.log(data.data.crops.data)
+                
+                });
     }
     //Get Catogries in panigation
     const getAllCategoriesPlants = () => {
-        fetch(`${baseURL2}/${AllSUITABLEPLANTS}/${CATOGRIES}`)
-            .then((res) => res.json())
-            .then((data) => setCategories(data));
+        Axios.get(`${baseURL}/${AllSUITABLEPLANTS}/${CATOGRIES}`)
+            .then((data) => setCategories(data.data));
     }
 
     //Get every Catogies alone
     const getPlantsInCategory = (catName) => {
         console.log(catName);
-        fetch(`${baseURL2}/${AllSUITABLEPLANTS}/category/${catName}`)
-            .then((res) => res.json())
-            .then((data) => setsuitablePlants(data));
+        Axios.get(`${baseURL}/${AllSUITABLEPLANTS}/category/${catName}`)
+            .then((data) => setsuitablePlants(data.data));
     }
 
 
@@ -38,7 +39,7 @@ export default function PlantDetalis() {
 
     return (
         <>
-        <NavBar></NavBar>
+        {/* <NavBar></NavBar> */}
             <div>
                 <div className="cards" id="cards">
                     <h2 className="main-title"> Suitable Plant</h2>
@@ -65,13 +66,13 @@ export default function PlantDetalis() {
                                 suitablePlants.filter(suitablePlant => {
                                     if (search === '') {
                                         return suitablePlant;
-                                    } else if (suitablePlant.title.toLowerCase().includes(search.toLowerCase())) {
+                                    } else if (suitablePlant.name.toLowerCase().includes(search.toLowerCase())) {
                                         return suitablePlant;
                                     }
                                 }).map((suitablePlant, index) => {
                                     return (
                                         <div key={suitablePlant.id}>
-                                            <CardSuitableP suitablePlant={suitablePlant} showButton={true} />
+                                            <CardSuitableP suitablePlant={suitablePlant}  showButton={true}/>
                                         </div>
 
                                     );

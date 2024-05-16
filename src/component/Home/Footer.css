@@ -7,3 +7,40 @@
     color: aliceblue;
 } */
 
+/* .footerLink{
+    text-decoration: none !important;
+    color: #fff;
+    font-size:19px ;
+    line-height: 2px;
+}
+.footerLink:hover{
+    text-decoration: none !important;
+    color: #fff;
+    font-size:19px ;
+    line-height: 2px;
+} */
+/* textDecoration: 'none', color: '#fff', fontSize: '19px', lineHeight: '2px' */
+.ulfooter li a{
+    text-decoration: none !important;
+    color: #fff;
+    font-size:20px ;
+    /* line-height: 8px; */
+    margin-bottom: 5px;
+
+}
+.ulfooter li{
+    margin-left: -20px;
+}
+.linkHeader{
+    font-weight: bold;
+    position: relative;
+}
+.linkHeader::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    background-color: rgb(152, 207, 127);
+    height: 3px;
+    width: 90px;
+}

@@ -1,15 +1,11 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { REGISTER, baseURL } from "../../Api/Api";
-// import Loading from "../../Components/Loading";
-import loading from "./../../component/Loading";
+import Loading from '../../component/Loading';
 import Cookie from 'cookie-universal';
 // import { useNavigate } from "react-router-dom";
+import Navs from '../../component/Home.js/Navs/Navs';
 // import NavBar from "../../Components/NavBar";
-// import Navs from './../../component/Home.js/Navs/Navs';
-import Navs from "../../component/Home.js/Navs/Navs";
-import { Email } from "../Context/EmailContext";
-import { useNavigate } from "react-router-dom";
 
 export default function Register() {
     //states
@@ -20,13 +16,6 @@ export default function Register() {
         password_confirmation: "",
     });
     const [accept, setAccept] = useState(false);
-
-
-    // const navigate = useNavigate();
-    const emailShow = useContext(Email);
-    console.log(emailShow);
-
-    const nav = useNavigate();
 
     //Err
     const [err, setErr] = useState("");
@@ -47,18 +36,16 @@ export default function Register() {
         setLoading(true);
         try {
             const res = await axios.post(`${baseURL}/${REGISTER}`, form);
-            console.log(res);
+            console.log(res); 
             const token = res.data.token;
-            // const userEmail = res.data.user.email;
-            setLoading(false);
             cookie.set("e-commerce", token);
+            setLoading(false);
+            // localStorage.setItem('userToken', token);
             const userEmail = res.data.user.email;
+            localStorage.setItem('email', userEmail);
             console.log(userEmail);
-            emailShow.setEmailAuth({ token, userEmail });
             alert("A OTP Email Verification has succesfully been sent to your email.");
-            // window.location.pathname = `/verifyotp`;
-            // navigate("/", {replace: true});
-            nav("/verifyotp");
+            window.location.pathname = `/verifyotp`;
         } catch (err) {
             // console.log(err);
             setLoading(false);
@@ -78,7 +65,7 @@ export default function Register() {
 
     return (
         <>
-            {/* <NavBar></NavBar> */}
+            <NavBar></NavBar>
             {loading && <Loading></Loading>}
             <div className="parent">
                 <div className="register login">

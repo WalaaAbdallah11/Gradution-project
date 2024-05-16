@@ -39,14 +39,14 @@ function GrowingTipsDetails(GrowingTipsId) {
 
             {/* new */}
             <div className="heading">
-                <h1>Growing Tips</h1>
-                <p>{Growing.slug} </p>
+                <h1>Growing Details</h1>
+                <p>"{Growing.slug}"" </p>
             </div>
             
             <div className="about-container">
               <div className="row">
                  <div className="col-md-6">
-                   <img src={aboutUs} alt="chosse us"style={{width:'550px'}} />
+                   <img src={Growing.image} alt="chosse us"style={{width:'100%',borderRadius:'15px'}} />
                  </div>
                  <div className="col-md-6" style={{paddingTop:'8px'}} >
                    <div className="title" style={{display:'flex',justifyContent:'space-between'}}>

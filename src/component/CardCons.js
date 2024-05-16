@@ -1,13 +1,15 @@
-// import { Card } from "react-bootstrap";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import '../Css/card.css';
+import { Link } from "react-router-dom";
+import "../Css/card.css";
+import { CONSUL } from "../Api/Api";
+
 
 //Each Card Contain
 export default function CardConsultation(props) {
     const { consultation } = props;
     
     return (
-        <div className='box'>
+        <Link to={`/${CONSUL}/${consultation.id}`} style={{textDecoration:"none"}}>
+         <div className='box'>
             <div className="data">
                 <img src={consultation.thumbnail} alt="img" />
                 <div className="social">
@@ -18,11 +20,13 @@ export default function CardConsultation(props) {
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="info">
+            <div class="infoCons">
                     <h3 className="limitnumberh">{consultation.name}</h3>
                     <p className="limitnumber">{consultation.email}</p>
                 </div>
         </div>
+        </Link>
+       
 
     );
 }

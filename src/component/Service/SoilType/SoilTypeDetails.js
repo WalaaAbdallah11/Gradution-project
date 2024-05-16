@@ -6,11 +6,13 @@ import GrowingDetails from './../../../assets/GrowingTipsDetails.png';
 import { Axios } from './../../../Api/axios';
 import { dark } from "@mui/material/styles/createPalette";
 import aboutUs from './../../../assets/aboutUs.png';
+import SoilCrop from "./SoilCrop";
 // import axios from "axios";
 
 
 function SoilTypeDetails(soilTypeId) {
-    const [Soil, setSoil] = useState([]);
+    const [Soil, setSoil] = useState({});
+    const [cropDetails, SetCrop] = useState([]);
     const params = useParams();
 
     useEffect(() => {
@@ -22,61 +24,82 @@ function SoilTypeDetails(soilTypeId) {
             .then((data) => {
                 console.log(data.data.soil);
                 setSoil(data.data.soil)
+                SetCrop(data.data.soil.crops)
+                console.log(data.data.soil.crops);
             })
 
             .catch((error) => {
                 console.log(error);
             });
-
-
-
-
     }, []);
+
+    
 
     return (
         <>
 
 
             {/* new */}
-            <div className="heading">
-                <h1>Soil Details</h1>
-                {/* <p>   {Soil.name}</p> */}
+            <div className="heading" style={{width:"75%"}}>
+                <h1 style={{color:"#6f9A61"}}>{Soil.name} Soil</h1>
+                <p> "{Soil.properties}"</p>
             </div>
 
             <div className="about-container">
                 <div className="row">
                     <div className="col-md-6">
-                        <img src={aboutUs} alt="chosse us" style={{ width: '100%' }} />
+                        {/* <img src={aboutUs} alt="chosse us" style={{ width: '100%' }} /> */}
+                        <img src={Soil.image} alt="chosse us" style={{ width: '100%',borderRadius:'15px',minHeight:'400px' }} />
                     </div>
                     <div className="col-md-6" style={{ paddingTop: '8px' }} >
                        
-                            <h2 style={{ color: '#6f9A61', fontSize: '35px' }}>  {Soil.name} Soil</h2>
+                            {/* <h2 style={{ color: '#6f9A61', fontSize: '35px' }}>  {Soil.name} Soil</h2> */}
                            
-                        
-                        <p>{Soil.properties}</p>
+                            <h2 style={{ color: '#6f9A61', fontSize: '25px',fontWeight:'bold' }}>Additional Notes :-</h2>
                         <p>{Soil.additional_notes}</p>
+
+                        <h2 style={{ color: '#6f9A61', fontSize: '25px',fontWeight:'bold' }}>suitable Plants :-</h2>
+                        <p> {Soil.suitable_crops}</p>
+
+                        {/* <p>{Soil.additional_notes}</p> */}
                         {/* <div className="body">
                         {Soil.properties}
                         </div> */}
                     </div>
 
                     <div className="col-md-6" style={{marginTop:'30px'}}>
-                        <h2 style={{ color: '#6f9A61', fontSize: '25px' }}>Recommended Water :-</h2>
+                        <h2 style={{ color: '#6f9A61', fontSize: '25px' ,fontWeight:'bold' }}>Recommended Water :-</h2>
                         <p> {Soil.Recommended_Water}</p>     
                     </div>
                     <div className="col-md-6" style={{marginTop:'30px'}}>    
-                        <h2 style={{ color: '#6f9A61', fontSize: '25px' }}>Recommended Fertilizers :-</h2>
+                        <h2 style={{ color: '#6f9A61', fontSize: '25px',fontWeight:'bold' }}>Recommended Fertilizers :-</h2>
                         <p> {Soil.Recommended_Fertilizers}</p>
                     </div>
-                    <div className="col-md-12">
-                        <h2 style={{ color: '#6f9A61', fontSize: '25px' }}>suitable_crops :-</h2>
+                    {/* <div className="col-md-12">
+                        <h2 style={{ color: '#6f9A61', fontSize: '25px' }}>suitable Plants :-</h2>
                         <p> {Soil.suitable_crops}</p>
-                    </div>
+                    </div> */}
 
                 </div>
                 
                     
                 </div>
+
+                <div className="container">
+                    <div className="heading">
+                        <h1>Suitable Plants</h1>
+                    </div>     
+                    <div className="row">
+                        {cropDetails.map((crops) => {
+                          return (
+                            <div key={crops.id}>
+                                <SoilCrop crops={crops} showButton={true}/>
+                            </div>
+                        );
+                        })}
+                    </div>
+                </div>
+
 
 
           

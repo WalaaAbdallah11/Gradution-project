@@ -12,6 +12,8 @@
  .row {
     display: flex;
     justify-content: space-around;
+    /* margin-bottom: 35px; */
+    margin-bottom: 62px;
    
 } 
 
@@ -47,6 +49,7 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 15px;
+    font-weight: bold;
 }
 .growbm{
     display: flex;
@@ -56,15 +59,18 @@ body{
 .growbm a{
     text-decoration: none !important;
     color: #6f9A61 !important;
-    font-size: 18px;
+    font-size: 19px;
     margin-left: 20px;
+    font-weight: bold;
 }
 .growbm h2{
     margin-right: 20px;
     color: #6F9A61;
+    font-size: 19px;
     /* margin-top: 0px;
     padding-top: 0; */
     line-height: 50%;
+    font-weight: bold !important;
     /* display: flex;
     align-items: center; */
 }

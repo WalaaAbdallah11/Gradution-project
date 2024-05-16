@@ -1,10 +1,12 @@
 import React from 'react';
-// import NavBar from '../../Components/NavBar';
-import Navs from './../../component/Home.js/Navs/Navs';
+import Navs from '../../component/Home.js/Navs/Navs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 const ResetSuccess = () => {
+  // localStorage.removeItem('email');
+  localStorage.setItem('userID');
+
   return (
     <div>
       <NavBar></NavBar>
