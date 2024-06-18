@@ -20,7 +20,7 @@ const Service = () => {
     return (
         <>
             {/* <h2 className="text-center p-3" style={{ color: "#6F9A61", fontSize: "55px" }}> Our Service</h2> */}
-            <div className="container " style={{marginTop:'100px',marginBottom:'150px'}} >
+            <div className="container " style={{ marginTop: '100px', marginBottom: '150px' }} >
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card" >
@@ -38,7 +38,7 @@ const Service = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <div className="card">
                             <img src={suitableplant} />
                             <div className="c-contain" >
@@ -53,31 +53,31 @@ const Service = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <div className="card">
                             <img src={smartsensor} />
                             <div className="c-contain" >
-                                <h4 className="left" > Smart Sensor </h4>                                                                
+                                <h4 className="left" > Smart Sensor </h4>
                                 <p className="text" >Measure the amount af water</p>
                                 <div className='growbm' >
                                     <Link to="/sensor" > Try It  </Link>
                                     <h2>
-                                        <Link to='/sensor'  >  <EastIcon />  </Link>                         
+                                        <Link to='/sensor'  >  <EastIcon />  </Link>
                                     </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            {/* </div> */}
+                {/* </div> */}
 
-            {/* <div className="container"> */}
+                {/* <div className="container"> */}
                 <div className="row">
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <div className="card">
                             <img src={diseasedetection} />
                             <div className="c-contain">
-                                <h4 className="left" >  Disease Detection  </h4>                                                                
+                                <h4 className="left" >  Disease Detection  </h4>
                                 <p className="text" >Detect Pests and diseases that can hurt the plant</p>
                                 <div className='growbm' >
                                     <Link to="/plantdetection" >    Try It  </Link>
@@ -89,32 +89,32 @@ const Service = () => {
                         </div>
                     </div>
 
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <div className="card">
                             <img src={growingtips} />
                             <div className="c-contain" >
-                                <h4 className="left" > Growing Tips </h4>                       
+                                <h4 className="left" > Growing Tips </h4>
                                 <p className="text" >Include information on soil , watering frequency, and other </p>
                                 {/* <Link to='/GrowingTips' style={{ textDecoration: 'none', color: '#6F9A61', fontSize: '20px', marginLeft: '250px', paddingTop: '0px' }}>Try It</Link> */}
                                 <div className='growbm' >
                                     <Link to='/GrowingTips'> Try It  </Link>
                                     <h2>
-                                        <Link to='/GrowingTips'  >  <EastIcon />   </Link> 
+                                        <Link to='/GrowingTips'  >  <EastIcon />   </Link>
                                     </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-4">
+                    <div className="col-md-4">
                         <div className="card">
                             <img src={consultation} />
                             <div className="c-contain" >
-                                <h4 className="left" >  Consultation  </h4>                            
+                                <h4 className="left" >  Consultation  </h4>
                                 <p className="text" >Contact with one of our instructors for  advice</p>
                                 <div className='growbm' >
                                     <Link to="/consultation" >  Try It  </Link>
                                     <h2 >
-                                        <Link to="/consultation"  >  <EastIcon /> </Link>         
+                                        <Link to="/consultation"  >  <EastIcon /> </Link>
                                     </h2>
                                 </div>
                             </div>
@@ -126,3 +126,7 @@ const Service = () => {
     );
 }
 export default Service;
+
+
+
+

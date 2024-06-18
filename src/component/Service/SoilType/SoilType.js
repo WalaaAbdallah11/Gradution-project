@@ -53,6 +53,7 @@ function SoilType() {
       setfileup(file);
       HandleSubmit(file);
     };
+    
     return (
       <>
       <div className="text-center" style={{width:'100%',backgroundColor:'rgba(238, 238, 238, 0.5)'}}>

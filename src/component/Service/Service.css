@@ -17,6 +17,7 @@
 
 .row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     /* margin-bottom: 35px; */
     margin-bottom: 62px;
@@ -30,10 +31,10 @@
 
 }
 
- body {
+body {
     /* background-color: #EEEEEE !important; */
-  font-family: "Montserrat", sans-serif !important;
-    
+    font-family: "Montserrat", sans-serif !important;
+
 }
 
 
@@ -52,7 +53,7 @@
     border-bottom: 1px solid #ddd;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box; 
+    display: -webkit-box;
 
 }
 
@@ -95,8 +96,8 @@
 /* .text{
     color:gray;
  } */
-  .left{
-    color:#6f9A61;
+.left {
+    color: #6f9A61;
     /* margin-left:15px;
     margin-top:10px; */
     font-weight: bold;
@@ -105,11 +106,53 @@
     font-size: 27px;
     display: -webkit-box;
     padding: 15px 10px 0px;
-  font-family: "Montserrat", sans-serif !important;
-    
+    font-family: "Montserrat", sans-serif !important;
+
     /* justify-content: center; */
     overflow: hidden;
     text-overflow: ellipsis;
-  
-  }
-  
+
+}
+
+
+
+
+/* large */
+@media (max-width: 1200px) {
+    .col-md-4 {
+        flex: 0 0 33.33% !important;
+        max-width: 33.33% !important;
+        margin-bottom: 64px;
+
+       
+    }
+}
+/* med */
+@media (max-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+       
+    }
+}
+
+/* Media Query for small screens */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 64px;
+    } 
+}
+/* small */
+@media (max-width: 576px) {
+    .col-md-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        
+    }
+
+   
+
+   
+}
