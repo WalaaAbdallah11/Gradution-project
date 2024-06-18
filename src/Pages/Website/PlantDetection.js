@@ -38,14 +38,14 @@ export default function PlantDetection() {
 
     async function HandleSubmit(e) {
         setLoading(true);
-        // e.preventDefault();
+        e.preventDefault();
         const form = new FormData();
         form.append('fileup', fileup);
         try {
             const res = await Axios.post(`http://127.0.0.1:5000/api`, form);
             console.log(res.data.soilname);
             setLoading(false);
-            window.location.pathname = "/diseases/disease";
+            window.location.pathname = "/diseases/disease/${soilname}";
         } catch (err) {
             setLoading(false);
             console.log(err);

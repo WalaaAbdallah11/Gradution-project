@@ -42,7 +42,7 @@ function SoilType() {
             const res = await Axios.post(`http://127.0.0.1:5000/api`, form);
             console.log(res.data.soilname);
             setLoading(false);
-              window.location.pathname = "/soilType/soilType";
+              window.location.pathname = "/soilType/soilTypeId";
         } catch (err) {
             setLoading(false);
             console.log(err);  }
@@ -65,17 +65,17 @@ function SoilType() {
           <input placeholder="Enter Common Name"  onChange={event => 
             setSearch(event.target.value)}style={{width:'50%',marginBottom:'40px',borderRadius:'50px'}} />
 
-       <div className="text-center mt-5">
+       {/* <div className="text-center mt-5"> */}
           <input id="file-upload" className="image-upload" onChange={handleFileChange} type="file" style={{ display: 'none' }} />
-          <label htmlFor="file-upload" style={{ cursor: 'pointer' }}>
+          <label htmlFor="file-upload" style={{ cursor: 'pointer',marginLeft:'-55px' }}>
             <img src={upload} alt="Upload Icon" />
           </label>
-        </div>
+        {/* </div> */}
 
       </div>
 
       {/* ll */}
-      <div className="text-center mt-5" style={{}}>
+      {/* <div className="text-center mt-5" style={{}}>
       <input id="file-upload" className="image-upload" onChange={(e) => setfileup(e.target.files.item(0))} type="file" style={{ display: 'none' }} />
           <label htmlFor="file-upload" style={{ cursor: 'pointer' }}>
             <img src={upload} alt="Upload Icon" />
@@ -83,7 +83,7 @@ function SoilType() {
              <button type="submit" className="btn-upload" onClick={HandleSubmit} style={{ background: 'none', border: 'none',marginLeft:'-40px' }}>
             <SearchIcon style={{ fontSize: '2rem', color: '#6F9A61' }} />
           </button>
-        </div>
+        </div> */}
      
 
      
