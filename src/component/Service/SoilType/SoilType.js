@@ -42,7 +42,7 @@ function SoilType() {
             const res = await Axios.post(`http://127.0.0.1:5000/api`, form);
             console.log(res.data.soilname);
             setLoading(false);
-              window.location.pathname = "/diseases/disease";
+              window.location.pathname = "/soilType/soilType";
         } catch (err) {
             setLoading(false);
             console.log(err);  }

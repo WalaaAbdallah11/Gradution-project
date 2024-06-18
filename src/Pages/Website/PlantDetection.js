@@ -1,6 +1,6 @@
 import CardDiseasesDetection from "../../component/CardDiseaseDetection";
 import { useEffect, useState } from "react";
-import { DISEASES} from "../../Api/Api";
+import { DISEASES } from "../../Api/Api";
 import Navs from "../../component/Home.js/Navs/Navs";
 import plantLeaf from "../../assets/plant-leaf 1 (1).png";
 import vector from "../../assets/Vector.png"
@@ -29,25 +29,27 @@ export default function PlantDetection() {
         Axios.get(`/${DISEASES}?page=${currentPage}`)
             .then((data) => {
                 setPlantDiseases(data.data.data)
-            } ); };
+            });
+    };
     useEffect(() => {
         getPlantsDisease();
-      
+
     }, [currentPage]);
 
     async function HandleSubmit(e) {
         setLoading(true);
-        e.preventDefault();
+        // e.preventDefault();
         const form = new FormData();
         form.append('fileup', fileup);
         try {
             const res = await Axios.post(`http://127.0.0.1:5000/api`, form);
             console.log(res.data.soilname);
             setLoading(false);
-              window.location.pathname = "/diseases/disease";
+            window.location.pathname = "/diseases/disease";
         } catch (err) {
             setLoading(false);
-            console.log(err);  }
+            console.log(err);
+        }
     }
     return (
         <>
@@ -62,13 +64,13 @@ export default function PlantDetection() {
                     </p>
 
                     <div >
-                        <br/>
+                        <br />
                         <div>
-                        <input
-                        placeholder="Enter Common Name"
-                        className="searchDiseases"
-                        onChange={(event) => setSearch(event.target.value)}
-                    />   
+                            <input
+                                placeholder="Enter Common Name"
+                                className="searchDiseases"
+                                onChange={(event) => setSearch(event.target.value)}
+                            />
                         </div>
                         <div className="text-center mt-5">
                             <input className="image-upload" onChange={(e) => setfileup(e.target.files.item(0))}
@@ -81,8 +83,8 @@ export default function PlantDetection() {
                 <div className="cards" id="cards">
                     <h2 className="main-title"> Diseases Type</h2>
                     <p className="main-titlep text-center">
-                        " Plant diseases are a fact of life for farmer.<br></br> 
-                        Learn how to deal with the most common plant 
+                        " Plant diseases are a fact of life for farmer.<br></br>
+                        Learn how to deal with the most common plant
                         ailments and how to keep them from ruining your crops."
                     </p>
                     <div>
@@ -109,11 +111,12 @@ export default function PlantDetection() {
                                                     showButton={true}
                                                 />
                                             </div>
-                                        ) })}
+                                        )
+                                    })}
                         </div>
                         <div className="text-center mt-5">
                             <button className="btn-pagination" onClick={handlePrevPage} disabled={currentPage === 1}>
-                            <FontAwesomeIcon icon={faAngleLeft} /></button>
+                                <FontAwesomeIcon icon={faAngleLeft} /></button>
                             <span>{currentPage} - {totalPages}</span>
                             <button className="btn-pagination" onClick={handleNextPage} disabled={currentPage === totalPages}>
                                 <FontAwesomeIcon icon={faAngleRight} /> </button>
@@ -122,7 +125,7 @@ export default function PlantDetection() {
                     </div>
                 </div>
             </div>
-          
+
 
         </>
     );
