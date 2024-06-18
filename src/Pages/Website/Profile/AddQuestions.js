@@ -7,6 +7,7 @@ import Loading from "../../../component/Loading";
 // import Loading from '../../../Components/Loading';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function AddQuestions(props) {
   const [body, setBody] = useState("");
   const [dataprofile, setProfiles] = useState([]);
@@ -55,8 +56,7 @@ export default function AddQuestions(props) {
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter d-flex">
             <div class="top d-flex align-center ">
-            {/* <img class="avatar mr-15" src={post.image} alt="" /> */}
-            <img src={avatar} alt="img" class="avatar-post mr-15" style={{width:"90px", height:"90px", borderRadius:"50px"}}/>
+            <img class="avatar-post mr-15" src={dataprofile.thumbnail} alt="" style={{width:"90px", height:"90px", borderRadius:"50px"}}/>
             <div class="info">
               <span class="d-block mb-2 fw-bold">{dataprofile.name}</span>
               {/* <span class="c-grey">About 3 Hours Ago</span> */}

@@ -20,21 +20,22 @@ export default function AllChats() {
   return (
     <>
     {/* {loading && <Loading></Loading>}    */}
-    <MDBContainer fluid className="py-5">   
+    {/* <NavBar></NavBar> */}
+    <MDBContainer fluid className="mt-2">   
     <MDBRow>
 
-    <MDBCol md="6" lg="5" xl="4">
-      <MDBCardBody>
-        <MDBTypography listUnStyled className="mb-0" >
+    <MDBCol md="" lg="" xl="">
+      <h5 className="fw-bold">ALL CHATS</h5>
+      <div>
+        <MDBTypography listUnStyled className="mb-0">
           {Conversations.map((Conversation) => {
             return (
-              <div key={Conversation.id} >
+              <div key={Conversation.id}  >
                 <li
-                
                   className="p-2">
                   <Link to={`${Conversation.id}`} style={{ textDecoration: "none" }}>
                     <a href="conversation" className="d-flex justify-content-between chat-A">
-                      <div className="d-flex flex-row">
+                      <div className="d-flex "style={{backgroundColor:"#eee" , width: "100%" , padding :"10px" , borderRadius:"10px"}}>
                         <img
                           src={Conversation.thumbnail}
                           alt="avatar"
@@ -61,7 +62,7 @@ export default function AllChats() {
           })}
 
         </MDBTypography>
-      </MDBCardBody>
+      </div>
     </MDBCol>
      
         </MDBRow>

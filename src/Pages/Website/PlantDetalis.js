@@ -8,6 +8,8 @@ import Navs from "../../component/Home.js/Navs/Navs";
 import { Axios } from "../../Api/axios";
 // import CardSuitableP from "../../Components/CardSuitableP";
 
+
+
 export default function PlantDetalis() {
     const params = useParams();
     // console.log(params);
@@ -23,16 +25,18 @@ export default function PlantDetalis() {
                 setPlant(plant.data.crop)
                 // console.log(plant.data.crop.diseases)/
                 setpalntDiseases(plant.data.crop.diseases)
+                console.log(plant.data.crop.diseases)
+
             
             });
     }, []);
     
     //disease related to plant
-    useEffect(() => {
-        fetch(`${baseURL2}/${PLANTDETALI}`)
-            .then((res) => res.json())
-            .then((data) => setpalntDiseases(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch(`${baseURL2}/${PLANTDETALI}`)
+    //         .then((res) => res.json())
+    //         .then((data) => setpalntDiseases(data));
+    // }, []);
 
     return (
         <>
@@ -45,11 +49,11 @@ export default function PlantDetalis() {
                             {plant.name}
                         </h3>
 
-                        <p className="limitnumber"><span className="fw-bold m-1">Fertilizers :</span>{plant.Fertilizers}</p>
-                        <p className="limitnumber"><span className="fw-bold m-1">Irrigation Method</span>{plant["Irrigation Method"]}</p>
-                        <p className="limitnumber"><span className="fw-bold m-1">Planting Method</span>{plant["Planting Method"]}</p>
-                        <p className="limitnumber"><span className="fw-bold m-1">Planting Tips</span>{plant["Planting Tips"]}</p>
-                        <p className="limitnumber"><span className="fw-bold m-1">Recommended Time</span>{plant["Recommended Time"]}</p>
+                        <p ><span className="fw-bold m-1">Fertilizers :</span>{plant.Fertilizers}</p>
+                        <p ><span className="fw-bold m-1">Irrigation Method</span>{plant["Irrigation Method"]}</p>
+                        <p ><span className="fw-bold m-1">Planting Method</span>{plant["Planting Method"]}</p>
+                        <p ><span className="fw-bold m-1">Planting Tips</span>{plant["Planting Tips"]}</p>
+                        <p ><span className="fw-bold m-1">Recommended Time</span>{plant["Recommended Time"]}</p>
                         {/* <Link to={`/product/${plant.id}`} showButton={true} className="btn-detail">Read More</Link>   */}
                     </div> 
                     
@@ -60,13 +64,15 @@ export default function PlantDetalis() {
                 <div className='container'>
                     {palntDiseases.map((plantdisease , index) => {
                         return (
-                            <div key={plantdisease.id}>
+                            <div key={plantdisease.disease_id}>
                                 <CardDiseases plantdisease={plantdisease} showButton={true}/>
                             </div>
                         );
                     })}
                 </div>
             </div>
+            {/* <Footer></Footer> */}
+
         </>
     );
 }

@@ -38,27 +38,26 @@ function GrowingTipsDetails(GrowingTipsId) {
            
 
             {/* new */}
-            <div className="heading">
-                <h1>Growing Details</h1>
-                <p>"{Growing.slug}"" </p>
-            </div>
+            {/* <div className="heading"> */}
+                <h1 className="text-center" style={{ color: "#6F9A61", fontSize: "47px", paddingTop: '30px',fontWeight:'bold' }}>Growing Details</h1>
+                <p className="text-center " style={{ fontSize: "18px",color:'gray',marginBottom:'60px' }}>"{Growing.slug}" </p>
+            {/* </div> */}
             
             <div className="about-container">
               <div className="row">
                  <div className="col-md-6">
-                   <img src={Growing.image} alt="chosse us"style={{width:'100%',borderRadius:'15px'}} />
+                   <img src={Growing.image} alt="chosse us"style={{width:'100%',borderRadius:'15px',height:'355px'}} />
                  </div>
                  <div className="col-md-6" style={{paddingTop:'8px'}} >
                    <div className="title" style={{display:'flex',justifyContent:'space-between'}}>
-                    <h2 style={{ color: '#6f9A61', fontSize: '25px'}}> {Growing.title}</h2>
-                    <h5 style={{color:'gray',fontSize: '15px'}}>By Ahmed
-                        {/* {Growing.user.name} */}
-                    </h5>
+                    <h2 style={{ color: '#6f9A61', fontSize: '25px',fontWeight:'bold'}}> {Growing.title}</h2>
+                    {/* <h5 style={{color:'gray',fontSize: '15px'}}>By Ahmed   </h5> */}
+                    {/* {Growing.user.name} */}
                   </div> 
-                  <p>{Growing.slug}</p>
-                  <div className="body">
-                    {Growing.body}
-                  </div>
+                  <p>{Growing.slug}  {Growing.body}</p>
+                  {/* <div className="body"style={{fontSize:'17px'}}>
+                    {Growing.body},he
+                  </div> */}
               
              
               </div>

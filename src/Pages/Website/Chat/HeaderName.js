@@ -7,42 +7,53 @@ import { useParams} from 'react-router-dom';
 // import Loading from "../../../Components/Loading";
 
 export default function HeaderName(){
-    const [Conversations, setConversations] = useState([]);
+  const [Conversations, setConversations] = useState([]);
 
-    const params = useParams();
-  useEffect(() => {
-    Axios.get(`${baseURL}/${CONVERSATIONS}`)
-      .then((data) => {
-        setConversations(data.data.users)
-        // console.log(data.data.users)
+  const params = useParams();
+useEffect(() => {
+  Axios.get(`${baseURL}/${CONVERSATIONS}`)
+    .then((data) => {
+      setConversations(data.data.users)
+      // console.log(data.data.users)
 
-      });
-  }, []);
-  
-  return(
-    <MDBCol md="6" lg="5" xl="4">
-      <MDBCardBody>
-        <MDBTypography listUnStyled className="mb-0">
-          {Conversations.map((Conversation) => {
-            return (
-              <div key={Conversation.id}>
-                <li className="p-2">
-                      <div className="d-flex flex-row">
+    });
+}, []);
+
+return(
+  <MDBCol md="6" lg="5" xl="4" >
+    <MDBCardBody>
+      <MDBTypography listUnStyled className="mb-0" >
+        {Conversations.map((Conversation) => {
+          return (
+            <div key={Conversation.id} >
+              <li >
+                    <div className="d-flex flex-row" >
+                     
+                      <div >
+                          { params.convID == Conversation.id ? (
+                            <div className="d-flex align-items-center">
+                           <img
+                           src={Conversation.thumbnail}
+                           alt="avatar"
+                           className="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
+                           width="60"
+                         />
+                          <p className="fw-bold mb-0 chat-name">{Conversation.name}</p>
+                          </div>
+                        
+                        ) : ""}
                        
-                        <div className="pt-1">
-                            { params.convID == Conversation.id ? (<p className="fw-bold mb-0 chat-name">{Conversation.name}</p>) : ""}
-                         
-                        </div>
                       </div>
-                 
-                </li>
-              </div>
+                    </div>
+               
+              </li>
+            </div>
 
-            );
-          })}
+          );
+        })}
 
-        </MDBTypography>
-      </MDBCardBody>
-    </MDBCol>
-  )
+      </MDBTypography>
+    </MDBCardBody>
+  </MDBCol>
+)
 }

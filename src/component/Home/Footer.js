@@ -25,7 +25,7 @@ const Footer = () => {
                             <li>  <Link to="/service" >Service</Link></li>
                             <li>  <Link to="/community" >Community</Link></li>
                             <li>  <Link to="/AboutUs" >About Us</Link></li>
-                            <li>  <Link to="npm star/Contact" >Contact Us</Link></li>
+                            <li>    <Link to="/Contact"> Contact Us</Link></li>
                         </ul>
                     </div>
                     <div className="col-md-3 col-sm-6">

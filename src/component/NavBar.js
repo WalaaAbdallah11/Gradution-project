@@ -52,10 +52,13 @@ export default function NavBar() {
     return (
         <div className="">
             <div className="navbar p-2 container">
+            <img src={logo} className="logo"></img>
                 <div className="d-flex flex-1 ">
+                    
                     <Link to="/">Home</Link>
                     <Link to="/service">Service</Link>
-                    <Link to="/About">About Us</Link>
+                    <Link to="/service">Community</Link>
+                    <Link to="/aboutus">About Us</Link>
                     <Link to="/contact">contact Us</Link>
 
                 </div>
@@ -64,21 +67,21 @@ export default function NavBar() {
                         <>
                             <Link
                                 to="/register"
-                                style={{ textAlign: "center" }}
-                                className="register-navBar"
+                                style={{ textAlign: "center", marginRight:"10px" }}
+                                className="btn-dashboard"
                             >
                                 Register
                             </Link>
                             <Link
                                 to="/login"
                                 style={{ textAlign: "center" }}
-                                className="register-navBar"
+                                className="btn-dashboard"
                             >
                                 Login
                             </Link>
                         </>
                     ) : (<> {is_admin === 1 ? <Link
-                        to="/dashboard"
+                        to="/dashboard/posts"
                         style={{ textAlign: "center" }}
                         className="btn-dashboard"
                     >

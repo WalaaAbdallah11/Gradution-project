@@ -29,11 +29,10 @@ function BlogDetails(blogId) {
         <>
         
        
-        <div className="heading">
-                <h1>Blog Details  </h1> 
-                <p>{blog.slug}</p>       
-         </div>
-         {/* <p>{blog.slug}</p> */}
+        
+                <h1 className="text-center" style={{ color: "#6F9A61", fontSize: "45px", paddingTop: '30px',fontWeight:'bold' }}>Blog Details  </h1> 
+                <p className="text-center " style={{ fontSize: "18px",color:'gray',marginBottom:'60px' }}>"{blog.slug}"</p>       
+       
            
             
           <div className="about-container">
@@ -42,9 +41,9 @@ function BlogDetails(blogId) {
                         <img src={blog.image} alt="chosse us" style={{ width: '100%',borderRadius:'15px' ,minHeight:'260px'}} />
                     </div>
                     <div className="col-md-6" style={{ paddingTop: '8px',marginBottom:'200px' }} >                     
-                      <h2 style={{ color: '#6f9A61', fontSize: '35px' }}> {blog.title} </h2>                          
-                      <p>{blog.slug}</p>
-                      <div className="body"style={{fontSize:'18px'}}> {blog.body}  </div>
+                      <h2 style={{ color: '#6f9A61', fontSize: '29px',fontWeight:'bold' }}> {blog.title} </h2>                          
+                      <p>{blog.slug}{blog.body}</p>
+                      {/* <div className="body"style={{fontSize:'17px'}}> {blog.body}  </div> */}
                     </div>
                 </div>
           </div>

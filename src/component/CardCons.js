@@ -1,7 +1,7 @@
+
 import { Link } from "react-router-dom";
 import "../Css/card.css";
 import { CONSUL } from "../Api/Api";
-
 
 //Each Card Contain
 export default function CardConsultation(props) {
@@ -55,3 +55,4 @@ export default function CardConsultation(props) {
 //         </>
 //     );
 // }
+

@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-
 import {Link , Navigate} from 'react-router-dom';
 import logo from './../../../assets/logoo.png';
 import './Navs.css'
@@ -8,28 +7,18 @@ import Home from '../../Home/Home';
 import Service from "../../Service/Service";
 import ServiceItem from "../../Service/ServiceItem";
 import Blog from "../../Home/Blog";
-
-// ward
 import Cookie from 'cookie-universal';
 import { PROFILE} from "../../../Api/Api";
-// import { PROFILE} from "../Api/Api";
 
-// import { Axios } from "../Api/axios";
+
 import { Axios } from '../../../Api/axios';
 import { Dropdown } from "react-bootstrap";
 import {useEffect, useState } from "react";
-// import { USER } from "../Api/Api";
-// import { USER } from '../../../Api/Api';
-// *************************
-
-
-
 
 const Navs = () => {
-  // ward
   const cookie = Cookie();
   const token = cookie.get("e-commerce");
-  console.log(token);
+//   console.log(token);
   
   const [name, setName] = useState("");
   const [is_admin, setIs_admin] = useState("");
@@ -65,12 +54,11 @@ const Navs = () => {
           console.log(err);
       }
   }
-  // *************************
+ 
 
   return (
     
       <Navbar expand="lg">
-
         <Navbar.Brand href="#home">
           <img src={logo} title="logo" />
         </Navbar.Brand>
@@ -78,37 +66,36 @@ const Navs = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Link to="/home">Home</Link>
-            <Link to="/service">Service</Link>
-            
+            <Link to="/service">Service</Link>     
             <Link to="/community">Community</Link>
             <Link to="/AboutUs">About Us</Link>
             <Link to="/Contact">Contact Us</Link>
-          </Nav>
-         
-           <Nav className="Register">
-           <div className="d-flex">
-         
+          </Nav>   
+           {/* <Nav className="Register"> */}
+           <div className="d-flex"> 
            {!token ? (
                         <>
                             <Link
                                 to="/register"
-                                style={{ textAlign: "center" }}
-                                className="register-nav"
+                                // style={{ textAlign: "center" }}
+                                // className="register-nav"
+                                style={{ textAlign: "center", marginRight:"10px" }}
+                                className="btn-dashboard"
                             >
                                 Register
                             </Link>
                             <Link
                                 to="/login"
                                 style={{ textAlign: "center" }}
-                                className="register-nav"
+                                className="btn-dashboard"
                             >
                                 Login
                             </Link>
                         </>
                     ) : (<> {is_admin === 1 ? <Link
-                        to="/dashboard"
+                        to="/dashboard/posts"
                         style={{ textAlign: "center" }}
-                        // className="register-nav"
+                     
                         className="btn-dashboard"
                     >
                         Dashboard
@@ -132,11 +119,23 @@ const Navs = () => {
                         </Dropdown> </>)}
                         </div>
 
-          </Nav> 
+          {/* </Nav>  */}
+        </Navbar.Collapse>
+      </Navbar>
+
+  )
+}
+
+export default Navs;
 
 
-           
-           {/* <nav className="Register">
+ {/* <Nav className="d-flex"> */}
+           {/* <Link to="/Sign Up">Sign Up</Link>
+           <Link to="/Sign In">Sign In</Link> */}
+
+
+
+            {/* <nav className="Register">
            <div className="d-flex">
                     {!token ? (
                         <>
@@ -181,18 +180,3 @@ const Navs = () => {
                         </Dropdown> </>)}
                 </div>
                 </nav> */}
-           
-
-        </Navbar.Collapse>
-      </Navbar>
-     
-
-  )
-}
-
-export default Navs;
-
-
- {/* <Nav className="d-flex"> */}
-           {/* <Link to="/Sign Up">Sign Up</Link>
-           <Link to="/Sign In">Sign In</Link> */}

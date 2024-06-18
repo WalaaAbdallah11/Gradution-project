@@ -54,9 +54,12 @@ color: white;
 
 }
 .btn-catog{
-    background-color: #caddc3;
+    background-color: 
+    rgba(111, 154, 97, 0.7);
+    /* background-color: #caddc3; */
     /* background-color: rgb(153, 202, 153); */
     /* background-color: #6F9A61; */
+    
     color: white;
     outline: none;
     border: none;

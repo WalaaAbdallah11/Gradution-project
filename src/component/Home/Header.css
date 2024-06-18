@@ -11,7 +11,8 @@ header {
 
 header h3 {
     color: white;
-    font-size: 30px;
+    font-size: 22px;
+    font-weight: bold;
     margin-top: 130px;
     font-family: "Cairo", sans-serif;
 
@@ -20,19 +21,21 @@ header h1{
     color: 
     #F7C35F ;
     font-size: 55px;
-    
+    font-weight: bold;
+    /* margin-top: 130px; */
     font-family: "Cairo", sans-serif;
 
 }
 header h2{
     color: white;
-    font-size: 30px;
+    font-size: 43px;
+    font-weight: bold;
 
     font-family: "Cairo", sans-serif;
 }
 header h5{
     color: white;
-    font-size: 18px;
+    font-size: 21px;
 
     font-family: "Cairo", sans-serif;
 }

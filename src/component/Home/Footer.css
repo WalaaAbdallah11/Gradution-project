@@ -35,7 +35,7 @@
     font-weight: bold;
     position: relative;
 }
-.linkHeader::before{
+/* .linkHeader::before{
     content: '';
     position: absolute;
     left: 0;
@@ -43,4 +43,4 @@
     background-color: rgb(152, 207, 127);
     height: 3px;
     width: 90px;
-}
+} */

@@ -6,7 +6,10 @@ import Loading from "../../../component/Loading";
 
 import Form from 'react-bootstrap/Form';
 
-export default function EditProfile(){
+
+
+
+  export default function EditProfile(){
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -41,7 +44,7 @@ export default function EditProfile(){
     return(
         <>
         {loading && <Loading></Loading>}
-        <NavBar></NavBar>
+        {/* <NavBar></NavBar> */}
         <div className="container mt-5" style={{marginRight:"40px"}}>
             <Form onSubmit={HandleSubmit} style={{width:"800px"}}>
             <label> Your Name </label>
@@ -85,6 +88,8 @@ export default function EditProfile(){
                     } className='btnpost' type='submit'> Edit </button>
         </Form>
         </div>
+        {/* <Footer></Footer> */}
+
         </>
     )
 }

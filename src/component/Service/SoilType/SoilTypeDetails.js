@@ -40,9 +40,9 @@ function SoilTypeDetails(soilTypeId) {
 
 
             {/* new */}
-            <div className="heading" style={{width:"75%"}}>
-                <h1 style={{color:"#6f9A61"}}>{Soil.name} Soil</h1>
-                <p> "{Soil.properties}"</p>
+            <div className="heade" style={{width:"75%"}}>
+                <h1 style={{color:"#6f9A61",fontSize:'50px',fontWeight:'bold'}}>{Soil.name} Soil</h1>
+                <p style={{color:'gray'}}> "{Soil.properties}"</p>
             </div>
 
             <div className="about-container">
@@ -55,11 +55,11 @@ function SoilTypeDetails(soilTypeId) {
                        
                             {/* <h2 style={{ color: '#6f9A61', fontSize: '35px' }}>  {Soil.name} Soil</h2> */}
                            
-                            <h2 style={{ color: '#6f9A61', fontSize: '25px',fontWeight:'bold' }}>Additional Notes :-</h2>
-                        <p>{Soil.additional_notes}</p>
+                            <h2 style={{ color: '#6f9A61', fontSize: '29px',fontWeight:'bold' }}>Additional Notes :-</h2>
+                        <p style={{fontSize:'18px'}}>{Soil.additional_notes}</p>
 
-                        <h2 style={{ color: '#6f9A61', fontSize: '25px',fontWeight:'bold' }}>suitable Plants :-</h2>
-                        <p> {Soil.suitable_crops}</p>
+                        <h2 style={{ color: '#6f9A61', fontSize: '29px',fontWeight:'bold' }}>suitable Plants :-</h2>
+                        <p style={{fontSize:'18px'}}> {Soil.suitable_crops}</p>
 
                         {/* <p>{Soil.additional_notes}</p> */}
                         {/* <div className="body">
@@ -68,12 +68,12 @@ function SoilTypeDetails(soilTypeId) {
                     </div>
 
                     <div className="col-md-6" style={{marginTop:'30px'}}>
-                        <h2 style={{ color: '#6f9A61', fontSize: '25px' ,fontWeight:'bold' }}>Recommended Water :-</h2>
-                        <p> {Soil.Recommended_Water}</p>     
+                        <h2 style={{ color: '#6f9A61', fontSize: '29px' ,fontWeight:'bold' }}>Recommended Water :-</h2>
+                        <p style={{fontSize:'18px'}}> {Soil.Recommended_Water}</p>     
                     </div>
                     <div className="col-md-6" style={{marginTop:'30px'}}>    
-                        <h2 style={{ color: '#6f9A61', fontSize: '25px',fontWeight:'bold' }}>Recommended Fertilizers :-</h2>
-                        <p> {Soil.Recommended_Fertilizers}</p>
+                        <h2 style={{ color: '#6f9A61', fontSize: '29px',fontWeight:'bold' }}>Recommended Fertilizers :-</h2>
+                        <p style={{fontSize:'18px'}}> {Soil.Recommended_Fertilizers}</p>
                     </div>
                     {/* <div className="col-md-12">
                         <h2 style={{ color: '#6f9A61', fontSize: '25px' }}>suitable Plants :-</h2>
@@ -86,8 +86,9 @@ function SoilTypeDetails(soilTypeId) {
                 </div>
 
                 <div className="container">
-                    <div className="heading">
-                        <h1>Suitable Plants</h1>
+                    <div className="heade">
+                        <h1  className="text-center" style={{ color: "#6F9A61", fontSize: "50px", paddingTop: '30px',fontWeight:'bold' }}>
+                            Suitable Plants</h1>
                     </div>     
                     <div className="row">
                         {cropDetails.map((crops) => {

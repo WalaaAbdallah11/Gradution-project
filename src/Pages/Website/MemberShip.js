@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import Navs from "../../component/Home.js/Navs/Navs";
 import { Axios } from "../../Api/axios";
 import { Link } from "react-router-dom";
-import PlantDetalis from './SuitablePlant';
+import PlantDetalis from './SuitablePlant'
+// import Footer from "./Home/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function MemberShip() {
     const [memberShips, setMemberShips] = useState([]);
@@ -25,12 +28,12 @@ export default function MemberShip() {
     return (
         <>
             {/* <NavBar></NavBar> */}
-            <div style={{ backgroundColor: "#eee" }} >
+            <div >
                 <div class="pricing p-3" id="pricing">
-                    <h2 class="main-title " >Pricing Plans</h2>
-                    <div class="container ">
+                    <h2 class="main-title " >Subscription</h2>
+                    <div class="contmember">
                         {memberShips.map((memberShip) => {
-                            const price = memberShip.Price.split('/')
+                            const price = memberShip.Price.split('//')
                             const Benefits = memberShip.Benefits.split('\n')
                             // const Features = memberShip.Benefits.split('\n')
                             // console.log(Benefits)
@@ -38,26 +41,29 @@ export default function MemberShip() {
                                 <div key={memberShip.id}>
                                     <div class="box">
                                         <h3 class="title">{memberShip.name}</h3>
-                                        <div class="price">
-                                            <span class="amount">{price[0]}</span>                                            
-                                            <span class="time">per {price[1]}</span>
-                                        </div>
                                         <ul type="none" className="">
-                                            
-
-                                            <li>{Benefits[0]}</li>
-                                            <li>{Benefits[1]}</li>
-                                            {/* <li>{Features[0]}</li>
-                                            <li>{Features[1]}</li> */}
-                                            {/* <li>2 Subdomains</li>
-                                            <li>4 Databases</li>
-                                            <li>Basic Support</li> */}
+                                            <li>
+                                            <FontAwesomeIcon  icon={faCircleCheck} className="icon-sub" />
+                                           {Benefits[0]}
+                                            </li>
+                                            <li>
+                                            <FontAwesomeIcon  icon={faCircleCheck} className="icon-sub"/>{Benefits[1]}
+                                            </li>
                                         </ul>
-                                        <Link to={`/membership/${memberShip.id}`} style={{background:"none", border:"none"}}>
-                                        <a href="">Choose Plan</a>
-
-                                        </Link>
+                                        
                                     </div>
+                                    <div class="price">
+                                            <span class="amount">{price[0]}</span>                                            
+                                            <span class="time"> {price[1]}</span>
+                                        </div>
+                                        <div className="text-center" style={{marginLeft:"-30px"}}>
+                                        <Link to={`/membership/${memberShip.id}`} style={{background:"none", border:"none"}}>
+                                        <a href="">Buy Now</a>
+                                        </Link>
+                                        </div>
+                                        
+
+                                       
                                 </div>
 
                             );
@@ -66,6 +72,9 @@ export default function MemberShip() {
                     </div>
                 </div>
             </div>
+            {/* <Footer></Footer> */}
+
+            
 
         </>
     )

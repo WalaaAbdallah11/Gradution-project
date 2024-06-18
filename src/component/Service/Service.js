@@ -20,14 +20,15 @@ const Service = () => {
     return (
         <>
             {/* <h2 className="text-center p-3" style={{ color: "#6F9A61", fontSize: "55px" }}> Our Service</h2> */}
-            <div className="container " style={{marginTop:'100px'}} >
+            <div className="container " style={{marginTop:'100px',marginBottom:'150px'}} >
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card" >
                             <img src={soildetect} />
                             <div className="c-contain" >
-                                <h4 className="header" > Soil Detection</h4>
-                                <p className="text" >detect The type of the soil</p>
+                                {/* header class name */}
+                                <h4 className="left" > Soil Detection</h4>
+                                <p className="text" >Detect The type of the soil</p>
                                 <div className='growbm'>
                                     <Link to="/soilType" > Try It</Link>
                                     <h2 >
@@ -41,7 +42,7 @@ const Service = () => {
                         <div className="card">
                             <img src={suitableplant} />
                             <div className="c-contain" >
-                                <h4 className="header">suitable Plant </h4>
+                                <h4 className="left">Suitable Plant </h4>
                                 <p className="text" >The best plant rely on soil type</p>
                                 <div className='growbm' >
                                     <Link to="/suitableplant" > Try It </Link>
@@ -56,8 +57,8 @@ const Service = () => {
                         <div className="card">
                             <img src={smartsensor} />
                             <div className="c-contain" >
-                                <h4 className="header" > Smart Sensor </h4>                                                                
-                                <p className="text" >measure the amount af water</p>
+                                <h4 className="left" > Smart Sensor </h4>                                                                
+                                <p className="text" >Measure the amount af water</p>
                                 <div className='growbm' >
                                     <Link to="/sensor" > Try It  </Link>
                                     <h2>
@@ -76,8 +77,8 @@ const Service = () => {
                         <div className="card">
                             <img src={diseasedetection} />
                             <div className="c-contain">
-                                <h4 className="header" >  Disease Detection  </h4>                                                                
-                                <p className="text" >detect Pests and diseases that can hurt the plant</p>
+                                <h4 className="left" >  Disease Detection  </h4>                                                                
+                                <p className="text" >Detect Pests and diseases that can hurt the plant</p>
                                 <div className='growbm' >
                                     <Link to="/plantdetection" >    Try It  </Link>
                                     <h2 >
@@ -92,8 +93,8 @@ const Service = () => {
                         <div className="card">
                             <img src={growingtips} />
                             <div className="c-contain" >
-                                <h4 className="header" > Growing Tips </h4>                       
-                                <p className="text" >include information on soil conditions, watering frequency, and other factors</p>
+                                <h4 className="left" > Growing Tips </h4>                       
+                                <p className="text" >Include information on soil , watering frequency, and other </p>
                                 {/* <Link to='/GrowingTips' style={{ textDecoration: 'none', color: '#6F9A61', fontSize: '20px', marginLeft: '250px', paddingTop: '0px' }}>Try It</Link> */}
                                 <div className='growbm' >
                                     <Link to='/GrowingTips'> Try It  </Link>
@@ -108,8 +109,8 @@ const Service = () => {
                         <div className="card">
                             <img src={consultation} />
                             <div className="c-contain" >
-                                <h4 className="header" >  consultation  </h4>                            
-                                <p className="text" >contact with one of our instructors for information and advice</p>
+                                <h4 className="left" >  Consultation  </h4>                            
+                                <p className="text" >Contact with one of our instructors for  advice</p>
                                 <div className='growbm' >
                                     <Link to="/consultation" >  Try It  </Link>
                                     <h2 >

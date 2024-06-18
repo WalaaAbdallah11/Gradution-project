@@ -4,16 +4,19 @@ import { Axios } from '../../Api/axios';
 // import Loading from '../../Components/Loading';
 import loading from "./../../component/Loading";
 
+
+import { CAT, CREATEPOST, baseURL } from '../../Api/Api';
+
+
 export default function AddPost() {
     const [category_id, setId] = useState("");
     const [title, setTitle] = useState("");
     const [slug, setSubslug] = useState("");
     const [body, setBody] = useState("");
     const[image , setImage] = useState("")
-    
     const [loading, setLoading] = useState(false);
 
-    //function
+    //function CREATE POST
     async function HandleSubmit(e) {
         setLoading(true);
         e.preventDefault();
@@ -25,7 +28,8 @@ export default function AddPost() {
         form.append("body" , body);
         form.append('image', image);
         try {
-            const res = await Axios.post(`/create_post`,form) ;
+            const res = await Axios.post(`${baseURL}/${CAT}/${CREATEPOST}`,form) ;
+            console.log(res);           
             window.location.pathname = "/dashboard/posts";
         } catch (err) {
             setLoading(false);
@@ -35,64 +39,60 @@ export default function AddPost() {
     }
     return (
         <>
-            {loading && <Loading></Loading>}
-            <Form className='bg-white w-100 mx-2 p-3' onSubmit={HandleSubmit}>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput0">
-                    <Form.Label > Category_Id </Form.Label>
-                    <Form.Control
+        <div >
+        {loading && <Loading></Loading>}
+            <form className='bg-white w-100 mx-2 p-3' onSubmit={HandleSubmit}>
+                
+                    <label> Category_Id </label>
+                    <input
                         className='inputdash'
                         name='id'
                         value={category_id}
                         required
                         onChange={(e) => setId(e.target.value)}
                         type="number" placeholder="id....." />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label> Title </Form.Label>
-                    <Form.Control
+
+                    <label> Title </label>
+                    <input
+                    className='inputdash'
+
                         name='name'
                         value={title}
                         required
                         onChange={(e) => setTitle(e.target.value)}
                         type="text" placeholder="name....." />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                    <Form.Label> Subslug </Form.Label>
-                    <Form.Control
+
+                    <label> Subslug </label>
+                    <input
                     className='inputdash'
                         name='slug'
                         value={slug}
                         required
                         onChange={(e) => setSubslug(e.target.value)}
                         type="text" placeholder="name....." />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="image">
-                <Form.Label> Image </Form.Label>
-                    <Form.Control onChange={(e) => setImage(e.target.files.item(0))}
-                        type="file" />
-                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-                    <Form.Label> Description </Form.Label>
-                    <Form.Control
-                        className='inputdash w-100 desdash '
-                        style={{outline:"none"}}
+                 <label> Image </label>
+                    <input onChange={(e) => setImage(e.target.files.item(0))}
+                        type="file" className='inputdash'/>
+
+                    <label> Description </label>
+                    <input
+                        className='inputdash w-100 desdash'
+                        style={{outline:"none", height:"200px" }}
                         name='body'
                         value={body}
                         required
                         onChange={(e) => setBody(e.target.value)}
                         type="text" placeholder="Description....." />
-                </Form.Group>
-                
-
-                
                 <button 
                 disabled={
                     title.length > 1 
                     ? false : true
                     } className='btnpost'>Create Post</button>
-            </Form>
+            </form>
+
+        </div>
+            
         </>
     );
 }
-

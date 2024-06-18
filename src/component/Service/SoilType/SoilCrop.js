@@ -21,14 +21,15 @@ import { useState } from 'react';
         
          
             <div className="card" style={{width:'400px' ,height:'800px !important',borderRadius:'30px'}}>
-           <img src={crops.image} style={{ minHeight: '170px',borderRadius:'16px' }}/>
+           <img src={crops.image} style={{ minHeight: '170px',borderRadius:'16px 16px 0 0' }}/>
           
              <div className="c-contain" style={{backgroundColor:'#fff'}}>
-                <h4 className='header' style={{color:'#6f9A61',fontSize:'30px',borderBottom:'2px solid #ddd',paddingBottom:'10px',textAlign:'center', paddingTop:'10px'}}>
+                <h4 className='left'  >
+                {/* style={{color:'#6f9A61',fontSize:'30px',borderBottom:'2px solid #ddd',paddingBottom:'10px',textAlign:'center', paddingTop:'10px'}}> */}
                    
                   {crops.name}
                 </h4>
-               <p className="limitnumber" style={{border:'None' ,padding:'4px',fontSize:'14px', overflow: "hidden",textOverflow: "ellipsis",display: "-webkit-box", WebkitLineClamp:" 2", lineClamp: "2",WebkitBoxOrient: "vertical"}}>{crops["Planting Method"]}</p> 
+               <p className="limitnumber" style={{border:'None',color:'gray' ,paddingLeft:'13px',fontSize:'15px', overflow: "hidden",textOverflow: "ellipsis",display: "-webkit-box", WebkitLineClamp:" 2", lineClamp: "2",WebkitBoxOrient: "vertical"}}>{crops["Planting Method"]}</p> 
               </div>
              
 

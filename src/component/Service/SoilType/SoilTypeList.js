@@ -19,7 +19,7 @@ import EastIcon from '@mui/icons-material/East';
            <img src={soil.image} style={{minHeight:'200px',borderRadius:'16px 16px 0 0'}}/>
            {/* <img src={Growing.image}/> */}
              <div className="c-contain" style={{backgroundColor:'#fff'}}>
-                <h4 className='header' style={{color:'#6f9A61',fontSize:'30px',borderBottom:'2px solid #ddd',paddingBottom:'10px',textAlign:'center', paddingTop:'10px'}}>
+                <h4 className='left' style={{color:'#6f9A61',fontSize:'30px',borderBottom:'2px solid #ddd',textAlign:'center', padding:'13px'}}>
                    
                   {soil.name}
                 </h4>
