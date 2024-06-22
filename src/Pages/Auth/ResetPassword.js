@@ -45,7 +45,7 @@ const ResetPassword = () => {
 
   return (
     <div>
-      <NavBar></NavBar>
+      {/* <NavBar></NavBar> */}
       {loading && <Loading></Loading>}
       <div className="parent">
         <div className="register login">

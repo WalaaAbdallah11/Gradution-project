@@ -8,7 +8,7 @@ const VerifySuccess = () => {
   localStorage.removeItem('email');
   return (
     <div>
-      <NavBar></NavBar>
+      {/* <NavBar></NavBar> */}
       <div className="parent">
         <div className="register login">
           <form >

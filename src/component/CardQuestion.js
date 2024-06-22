@@ -45,7 +45,8 @@ export default function CardQuestion(props) {
             } else if (dataprofile.membership_level_id === 2 && 3 && 4  ){
                 Axios.get(`/${QUESTUION}/${question.id}`)
             .then((data) => {
-                setComments(data.data.question.comments)
+                setComments(data.data.comments)
+                // setComments(data.data.question.comments)
             })       
             .catch(() => nav("/profile", {replace: true}));
 
@@ -249,7 +250,9 @@ export default function CardQuestion(props) {
                                                 <div>
                                                     <div className="d-flex justify-content-between align-items-center">
                                                         <p className="mb-1">
-                                                        {dataprofile.name}{" "}
+                                                        {comments.user.name}
+                                                        {/* {dataprofile.name} */}
+                                                        {" "}
                                                             <span className="small">- 2 hours ago</span>
                                                         </p>
                                                         <a href="#!">

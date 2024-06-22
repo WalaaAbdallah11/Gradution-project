@@ -51,6 +51,7 @@ export default function Postts(props) {
     const [body, setBody] = useState('');
     const [Comments, setComments] = useState([]);
 
+
     const formattedDate = moment(Post.updated_at).format('YYYY-MM-DD HH:mm:ss');
   
    
@@ -71,6 +72,30 @@ export default function Postts(props) {
       }, []);
 
     //  const [isLiked, setIsLiked] = useState(false);
+
+
+    async function fetchData() {
+        try {
+            if (dataprofile.membership_level_id === 1 && dataprofile.free_trails === 0) {
+                return "/profile";
+            } else if (dataprofile.membership_level_id === 2 && 3 && 4  ){
+                Axios.get(`/${QUESTUION}/${Post.id}`)
+            .then((data) => {
+                setComments(data.data.Comments)
+                // setComments(data.data.question.comments)
+            })       
+            .catch(() => nav("/community", {replace: true}));
+
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+
 
 
 
@@ -265,9 +290,12 @@ export default function Postts(props) {
                                 value={Comment.body} /> */}
                                 <div  style={{ display: 'flex',flexDirection:'column' ,flexWrap:'wrap', marginLeft:'20px',width:'auto',height:'auto',backgroundColor:'#dadada',padding:"5px 20px 5px 20px",borderRadius:'10px'}}> 
 
-                                <p style={{marginLeft:'10px',fontSize:'16px',fontWeight:'bold'}}>{dataprofile.name}</p>
+                                <p style={{marginLeft:'3px',fontSize:'16px',fontWeight:'bold'}}>
+                                {/* {dataprofile.name} */}
+                                {Comment.name}
+                                </p>
                                
-                                <p style={{marginLeft:'10px',marginTop:'-20px',fontSize:'19px',marginBottom:'-1px'}}>{Comment.body}</p>
+                                <p style={{marginLeft:'3px',marginTop:'-20px',fontSize:'19px',marginBottom:'-1px'}}>{Comment.body}</p>
                                 </div>
                             </div>  
 
