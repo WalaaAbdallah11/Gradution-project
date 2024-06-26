@@ -43,7 +43,7 @@ export default function AddPost() {
         {loading && <Loading></Loading>}
             <form className='bg-white w-100 mx-2 p-3' onSubmit={HandleSubmit}>
                 
-                    <label> Category_Id </label>
+                    <label> Category_Id: </label>
                     <input
                         className='inputdash'
                         name='id'
@@ -52,7 +52,7 @@ export default function AddPost() {
                         onChange={(e) => setId(e.target.value)}
                         type="number" placeholder="id....." />
 
-                    <label> Title </label>
+                    <label> Title: </label>
                     <input
                     className='inputdash'
 
@@ -62,7 +62,7 @@ export default function AddPost() {
                         onChange={(e) => setTitle(e.target.value)}
                         type="text" placeholder="name....." />
 
-                    <label> Subslug </label>
+                    <label> Subslug: </label>
                     <input
                     className='inputdash'
                         name='slug'
@@ -71,19 +71,20 @@ export default function AddPost() {
                         onChange={(e) => setSubslug(e.target.value)}
                         type="text" placeholder="name....." />
 
-                 <label> Image </label>
+                 <label> Image: </label>
                     <input onChange={(e) => setImage(e.target.files.item(0))}
                         type="file" className='inputdash'/>
 
-                    <label> Description </label>
-                    <input
+                    <label> Description: </label>
+                    <textarea
+                     style={{outline:"none", height:"200px" }}
+
                         className='inputdash w-100 desdash'
-                        style={{outline:"none", height:"200px" }}
                         name='body'
                         value={body}
                         required
                         onChange={(e) => setBody(e.target.value)}
-                        type="text" placeholder="Description....." />
+                        placeholder="Description....." />
                 <button 
                 disabled={
                     title.length > 1 

@@ -54,12 +54,10 @@ function GrowingTipsDetails(GrowingTipsId) {
                     {/* <h5 style={{color:'gray',fontSize: '15px'}}>By Ahmed   </h5> */}
                     {/* {Growing.user.name} */}
                   </div> 
-                  <p>{Growing.slug}  {Growing.body}</p>
-                  {/* <div className="body"style={{fontSize:'17px'}}>
-                    {Growing.body},he
-                  </div> */}
-              
-             
+                  <p>
+                { /* {Growing.slug}*/}
+                    {Growing.body}</p>
+                  
               </div>
             </div>
           

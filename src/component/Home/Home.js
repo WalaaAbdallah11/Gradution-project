@@ -20,7 +20,8 @@ function Home  ()  {
    const[blogs, setBlogs] = useState([]);
  
    useEffect(() => {
-    Axios.get(`${baseURL}/blogs`)
+    Axios.get(`http://127.0.0.1:8000/api/blogs`)
+    // Axios.get(`${baseURL}/blogs`)
         .then((data) => setBlogs(data.data.blogs));
         
     }, []);

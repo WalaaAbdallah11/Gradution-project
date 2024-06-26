@@ -21,7 +21,7 @@ const Contact = () => {
             .then(
                 (result) => {
                     console.log(result.text);
-                    console.log("message sent");
+                    alert("message sent");
                 },
                 (error) => {
                     console.log(error.text);
@@ -34,20 +34,19 @@ const Contact = () => {
         {/* <NavBar></NavBar> */}
         <div class="contact" id="Contact">
             <div class="container">
-                <div className="col-6 headerContact" >
-                    <h2 className="main-title plantDetDes headerCon">Contact US</h2>
-                    <p className="contact-titlep">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt. </p>
+                <div className="col-6 headerContact " >
+                    <h2 className="main-title mb-3 headerCon">Contact US</h2>
+                    <p className="contact-titlep text-center"> if you'd like to contact us, please feel free to send your message </p>
                 </div>
-                <div class="content">
+                <div class="contentContact" >
 
                     <div class="infoContact">
-                        <img src={contact} alt="img" style={{width:"500px" , height:"600px"}}></img>
+                        <img src={contact} alt="img" style={{width:"500px" , height:"540px" , marginLeft:"-40px" , marginRight:"20px" }}></img>
                     </div>
-
-                    <form ref={form} onSubmit={sendEmail} >
+<form ref={form} onSubmit={sendEmail} >
                         <label htmlFor="name">Full Name</label>
                         <input
-                            className="main-input"
+                             className='inputdash'
                             id="name"
                             placeholder="Name....."
                             type="text"
@@ -55,7 +54,7 @@ const Contact = () => {
 
                         <label htmlFor="email">Email Address</label>
                         <input
-                            className="main-input"
+                            className='inputdash'
                             id="email"
                             placeholder="Email....."
                             type="email"
@@ -65,14 +64,15 @@ const Contact = () => {
                             name="message" placeholder="Subject....." />
                         <input type="submit" value="Send" className="btn-contact register-navBar"/>
                     </form>
+                   
 
                 </div>
             </div>
         </div>
+        {/* <Footer ></Footer> */}
         </>
 
     );
 };
 
 export default Contact;
-
