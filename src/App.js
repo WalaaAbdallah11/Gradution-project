@@ -74,12 +74,16 @@ import Layout from './component/layout/layout';
 import AboutUs from './component/About/aboutUs';
 import BlogDetails from './component/Home/BlogDetails';
 import GrowingTipsDetails from './component/Service/GrowingTipsDetails';
+import blogg from './component/Home/blogg';
+import Blogg from './component/Home/blogg';
 
 
 const routes = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />}>
     <Route index path='home' element={<Home />} />
-    <Route index path='home/:blogId' element={<BlogDetails />} />
+    <Route index path='blogg' element={<Blogg />} />
+    <Route index path='blogg/:blogId' element={<BlogDetails />} />
+    {/* <Route index path='home/:blogId' element={<BlogDetails />} /> */}
     <Route path='service' element={<Service/>} />
     <Route path='community' element={<Community/>} />
     <Route path='AboutUs' element={<AboutUs/>} />

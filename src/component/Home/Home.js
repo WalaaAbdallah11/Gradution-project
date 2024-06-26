@@ -6,6 +6,7 @@ import  './Home.css';
 import SoilDetect from './../../assets/soildetect .png';
 import blogimg from './../../assets/blog.png';
 import Blog from "./Blog";
+import Blogg from "./blogg";
 import BlogDetails from "./BlogDetails";
 import axios from "axios";
 import { Axios } from './../../Api/axios';
@@ -17,14 +18,14 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 
 function Home  ()  {
-   const[blogs, setBlogs] = useState([]);
+  //  const[blogs, setBlogs] = useState([]);
  
-   useEffect(() => {
-    Axios.get(`http://127.0.0.1:8000/api/blogs`)
-    // Axios.get(`${baseURL}/blogs`)
-        .then((data) => setBlogs(data.data.blogs));
+  //  useEffect(() => {
+  //   Axios.get(`http://127.0.0.1:8000/api/blogs`)
+  //   // Axios.get(`${baseURL}/blogs`)
+  //       .then((data) => setBlogs(data.data.blogs));
         
-    }, []);
+  //   }, []);
 
   return (
     <>
@@ -60,7 +61,7 @@ function Home  ()  {
         </div>
 
       </section>
-      <section className="ourBlog" >
+      {/* <section className="ourBlog" >
         <div  className="heade">
          <h1 className="head" style={{color:'#6F9A61', fontSize:'60px',fontWeight:'bold',paddingTop:'40px',display:'flex',justifyContent:'center'}}>Our Blogs</h1>
          <p style={{color:'gray'}}>"Some blogs teach you more about farming include information on soil conditions,<br/> watering frequency, and other factors"</p>
@@ -77,7 +78,8 @@ function Home  ()  {
                  
           </div>
          </div>  
-      </section>
+      </section> */}
+      <Blogg />
     </>
   );
 }

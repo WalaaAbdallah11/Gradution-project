@@ -16,11 +16,11 @@ function Blog(props) {
                    </h4>
                    <p className='tex' style={{ fontSize:'18px',color:'gray',paddingLeft:'5px',borderBottom:'2px solid #ddd',overflow: "hidden",textOverflow: "ellipsis",display: "-webkit-box", WebkitLineClamp:" 2", lineClamp: "2",WebkitBoxOrient: "vertical"}}>{blog.slug}</p>
                     <div className='growbm' style={{ marginTop: '0', display: 'flex', justifyContent: 'space-between' }}>
-                        <Link to={`/home/${blog.id}`} key={blog.id} style={{ textDecoration: 'none', color: "#6f9A61", fontSize: '18px', marginLeft: "20px",fontWeight:'bold' }}>
+                        <Link to={`/blogg/${blog.id}`} key={blog.id} style={{ textDecoration: 'none', color: "#6f9A61", fontSize: '18px', marginLeft: "20px",fontWeight:'bold' }}>
                             Read More
                         </Link>
                         <h3 style={{ marginRight: '20px', color: "#6F9A61" }}>
-                            <Link to={`/home/${blog.id}`} key={blog.id} style={{ textDecoration: 'none', color: "#6f9A61", fontSize: '18px',fontWeight:'bold' }} >
+                            <Link to={`/blogg/${blog.id}`} key={blog.id} style={{ textDecoration: 'none', color: "#6f9A61", fontSize: '18px',fontWeight:'bold' }} >
                                 <EastIcon />
                             </Link>
                         </h3>
